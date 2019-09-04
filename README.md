@@ -1,2 +1,29 @@
-# v11-geckos-team-11
-Add-project-description-here | Voyage-11 | https://chingu.io/ | Twitter: https://twitter.com/ChinguCollabs
+# devtribe
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
