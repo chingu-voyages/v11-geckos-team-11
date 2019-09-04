@@ -1,18 +1,18 @@
 <template>
-<div id="app">
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
+  <div id="app">
+    <img
+      alt="Vue logo"
+      src="./assets/logo.png"
+    >
+    <HelloWorld />
   </div>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-</div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     HelloWorld
   }
