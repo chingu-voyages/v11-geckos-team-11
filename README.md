@@ -1,4 +1,4 @@
-# devtribe
+# devtribe2
 
 ## Project setup
 ```
