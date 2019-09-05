@@ -3,6 +3,8 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+const userRouter = require("./routes/userRoutes");
+
 // Start Express app
 const app = express();
 
@@ -35,4 +37,6 @@ app.use((req, res, next) => {
 });
 
 // 2) ROUTES
+app.use("api/v1/users", userRouter);
+
 module.exports = app;
