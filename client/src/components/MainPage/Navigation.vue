@@ -3,7 +3,8 @@
     <a
       class="navbar-brand"
       href="#"
-    >Navbar</a>
+    >DevTribe
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,29 +18,25 @@
     </button>
     <div
       id="navbarNavAltMarkup"
-      class="collapse navbar-collapse"
+      class="collapse navbar-collapse justify-content-end"
     >
       <div class="navbar-nav">
         <a
-          class="nav-item nav-link active"
+          class="nav-item nav-link mx-3"
           href="#"
-        >Home <span
-          class="sr-only"
-        >(current)</span></a>
+        >Browse Devs
+        </a>
         <a
-          class="nav-item nav-link"
+          class="nav-item nav-link mx-3"
           href="#"
-        >Features</a>
-        <a
-          class="nav-item nav-link"
-          href="#"
-        >Pricing</a>
-        <a
-          class="nav-item nav-link disabled"
-          href="#"
-          tabindex="-1"
-          aria-disabled="true"
-        >Disabled</a>
+        >Login
+        </a>
+        <button
+          type="button"
+          class="btn btn-outline-success mx-3 px-4"
+        >
+          Join
+        </button>
       </div>
     </div>
   </nav>
@@ -49,10 +46,16 @@
 export default {}
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .navbar {
-  background-color: #424242 !important;
+    background-color: #424242 !important;
+    a {
+      font-size: 20px;
+    }
+    .navbar-brand {
+      font-size: 20px;
 
+    }
 
 }
 </style>
