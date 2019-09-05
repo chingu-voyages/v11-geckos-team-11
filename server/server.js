@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Handler for any uncaught exception
 process.on("uncaughtException", err => {
@@ -13,6 +13,22 @@ process.on("uncaughtException", err => {
 dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
+
+// Configure DB
+const DB = process.env.DATABASE_URI.replace(
+  "<PASSWORD>",
+  process.env.DATABASE_PASSWORD
+);
+
+// Connecting DB. Passing in the options to prevent deprecated warnings
+// See Documentation > https://mongoosejs.com/docs/deprecations.html#-ensureindex-
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: true
+  })
+  .then(() => console.log("DB connected successfully"));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
