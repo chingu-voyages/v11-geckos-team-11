@@ -1,22 +1,15 @@
 <template>
-  <div class="container-fluid">
-    <!-- HEADER -->
-    <!-- HERO WITH CONTENT -->
-    <!-- WHY JOIN SECTION -->
-  </div>
+  <Navigation />
 </template>
 
 <script>
-// DAS MUSS ERSTELLT UND IMPORTIERT WERDEN, ICH HABS NUR SCHON MAL HINGESCHRIEBEN
-// import Header from './MainPage/Header.vue';
+import Navigation from './MainPage/Navigation.vue';
 export default {
+  components: {
+    Navigation
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  .container-fluid {
-    background-color: grey;
-    height: 100vh;
-    width: 100vw;
-  }
 </style>
