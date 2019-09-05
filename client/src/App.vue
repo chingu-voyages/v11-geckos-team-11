@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
+    <div class="container">
       <MainPage />
     </div>
   </div>
@@ -18,12 +18,14 @@ export default {
 
 <style lang="scss">
 #app {
+    background-color: #161618;
+    height: 100%;
+
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    .container-fluid {
-        height: 100vh;
-        width: 100vw;
+    .container {
+        max-width: 1920px;
         padding: 0 0;
-        margin: 0 0;
+        margin: 0 auto;
     }
 }
 </style>
