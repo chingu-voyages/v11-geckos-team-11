@@ -28,15 +28,15 @@
         </a>
         <a
           class="nav-item nav-link mx-3"
-          href="#"
+          href="/login"
         >Login
         </a>
-        <button
-          type="button"
-          class="btn btn-outline-success mx-3 px-4"
+        <a
+          href="/register"
+          class="btn btn-outline-success mx-3 px-4" role="button"
         >
           Join
-        </button>
+        </a>
       </div>
     </div>
   </nav>
