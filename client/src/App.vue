@@ -18,6 +18,8 @@ export default {
 
 <style lang="scss">
 #app {
+    background-color: #161618;
+
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     .container {
         max-width: 1920px;
