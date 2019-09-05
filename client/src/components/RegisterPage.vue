@@ -7,44 +7,54 @@
       <h3 class="main-header font-weight-bold">
         Great to have you.
       </h3>
-      <h3 class="sub-header mx-4 my-4 font-italic">
+      <h3 class="sub-header mx-4 my-5 font-italic">
         Register. It's free.
       </h3>
+      <!-- <div class="form-group">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+              </div>
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+        </div> -->
       <form
         action="POST"
-        class="w-25 mx-auto"
+        class="w-50 mx-auto form-group"
       >
-        <div class="input-group">
-          <span class="input-group-addon"><i
-            class="glyphicon glyphicon-user"
-          >icon</i></span>
-          <input
-            id="email"
-            type="text"
-            class="form-control mb-4"
-            placeholder="Email"
-          >
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon"><i
-            class="glyphicon glyphicon-eye-close"
-          >icon</i></span>
-          <input
-            type="text"
-            class="form-control mb-4"
-            placeholder="Password"
-          >
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon"><i
-            class="glyphicon glyphicon-eye-close"
-          >icon</i></span>
-          <input
-            type="text"
-            class="form-control mb-4"
-            placeholder="Password Confirm"
-          >
-        </div>
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+        </span>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          placeholder="Email"
+        >
+      </div>
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </span>
+        <input
+          id="password"
+          type="text"
+          class="form-control"
+          placeholder="Password"
+        >
+      </div>
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </span>
+        <input
+          id="email"
+          type="passwordconf"
+          class="form-control"
+          placeholder="Password Confirm"
+        >
+      </div>
         <button
           id="submit"
           type="submit"

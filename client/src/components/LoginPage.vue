@@ -12,29 +12,30 @@
       </h3>
       <form
         action="POST"
-        class="w-25 mx-auto"
+        class="w-50 mx-auto form-group"
       >
-        <div class="input-group">
-          <span class="input-group-addon"><i
-            class="glyphicon glyphicon-user"
-          >icon</i></span>
-          <input
-            id="email"
-            type="text"
-            class="form-control mb-4"
-            placeholder="Email"
-          >
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon"><i
-            class="glyphicon glyphicon-eye-close"
-          >icon</i></span>
-          <input
-            type="text"
-            class="form-control mb-4"
-            placeholder="Password"
-          >
-        </div>
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+        </span>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          placeholder="Email"
+        >
+      </div>
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </span>
+        <input
+          id="password"
+          type="text"
+          class="form-control"
+          placeholder="Password"
+        >
+      </div>
         <button
           id="submit"
           type="submit"
