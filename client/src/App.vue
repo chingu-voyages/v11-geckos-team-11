@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
-      <MainPage />
+      <router-view />
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     .container {
         max-width: 1920px;
-        padding: 0 0;
+        padding: 0;
         margin: 0 auto;
     }
 }
