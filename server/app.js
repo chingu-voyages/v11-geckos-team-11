@@ -27,6 +27,10 @@ app.use(cookieParser());
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   console.log(req.cookies);
+  res.status(200).json({
+    status: "success",
+    message: "Hello from DevTribe backend"
+  });
   next();
 });
 
