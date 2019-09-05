@@ -1,5 +1,5 @@
 <template>
-  <div class="jumbotron rounded-0">
+  <div class="jumbotron rounded-0 border-bottom">
     <div class="jumbo-content">
       <h1 class="display-4">
         DevTribe
@@ -22,13 +22,11 @@ export default {}
 
 <style lang="scss" scoped>
 .jumbotron {
-    // display: block;
     height: 720px;
     text-align: center;
+    margin: 0;
     .jumbo-content {
       margin-top: 10%;
-        // transform: translate(0%, 100%);
     }
-    .lead {}
 }
 </style>
