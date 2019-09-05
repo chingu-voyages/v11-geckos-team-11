@@ -1,7 +1,7 @@
 <template>
   <div class="register-form">
     <div class="back-link mx-5 my-4">
-      <a href="#">Go Back</a>
+      <a href="/">Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
       <h3 class="main-header font-weight-bold">
@@ -55,7 +55,7 @@
       </form>
       <div class="login-text mb-3">
         Already registered?
-        <a href="#">Log In Here</a>
+        <a href="/login">Log In Here</a>
       </div>
     </div>
   </div>
