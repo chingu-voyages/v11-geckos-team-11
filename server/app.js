@@ -3,6 +3,8 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+const userRouter = require("./routes/userRoutes");
+
 // Start Express app
 const app = express();
 
@@ -26,13 +28,11 @@ app.use(cookieParser());
 // Test Middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
-  res.status(200).json({
-    status: "success",
-    message: "Hello from DevTribe backend"
-  });
+  // console.log(req.cookies);
   next();
 });
 
 // 2) ROUTES
+app.use("/api/v1/users", userRouter);
+
 module.exports = app;
