@@ -8,6 +8,7 @@
 
 <script>
 import MainPage from './components/MainPage.vue';
+import RegisterPage from './components/RegisterPage.vue';
 export default {
   name: 'App',
   components: {
