@@ -13,8 +13,7 @@ const createSendToken = (user, statusCode, req, res) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true,
-    secure: req.secure || req.headers["x-forwarded-proto"] === "https"
+    httpOnly: true
   });
 
   // Remove password from output
@@ -40,5 +39,33 @@ exports.signup = async (req, res, next) => {
     createSendToken(newUser, 201, req, res);
   } catch (err) {
     res.status(500).json({ err });
+  }
+};
+
+exports.login = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    // 1) Check if email and password exist
+    if (!email || !password) {
+      return next();
+    }
+
+    // 2) Check if user exists & password correct
+    // Adding password back to output
+    const user = await User.findOne({ email }).select("+password");
+    const correct = user.correctPassword(password, user.password);
+
+    if (!user || !correct) {
+      return next();
+    }
+
+    // 3) Send token to client if everything is okay
+    createSendToken(user, 200, req, res);
+  } catch (err) {
+    res.status(401).json({
+      status: "fail",
+      message: "Incorrect email or password"
+    });
   }
 };
