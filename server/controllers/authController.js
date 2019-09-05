@@ -54,7 +54,8 @@ exports.login = async (req, res, next) => {
     // 2) Check if user exists & password correct
     // Adding password back to output
     const user = await User.findOne({ email }).select("+password");
-    const correct = user.correctPassword(password, user.password);
+    const correct = await user.correctPassword(password, user.password);
+    console.log(correct);
 
     if (!user || !correct) {
       return next();
@@ -63,9 +64,9 @@ exports.login = async (req, res, next) => {
     // 3) Send token to client if everything is okay
     createSendToken(user, 200, req, res);
   } catch (err) {
-    res.status(401).json({
+    res.status(500).json({
       status: "fail",
-      message: "Incorrect email or password"
+      message: "Something went wrong"
     });
   }
 };
