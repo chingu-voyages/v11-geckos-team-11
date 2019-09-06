@@ -33,7 +33,8 @@
         </a>
         <a
           href="/register"
-          class="btn btn-outline-success mx-3 px-4" role="button"
+          class="btn btn-outline-success mx-3 px-4"
+          role="button"
         >
           Join
         </a>
