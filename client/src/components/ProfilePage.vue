@@ -1,16 +1,18 @@
 <template>
   <div>
     <div class="profile-image">
-      <img
+      <div class="hero container-fluid img-responsive">
+        <img
+          src="https://via.placeholder.com/300x300"
+          alt="..."
+          class="img-thumbnail profile position-relative"
+        >
+      </div>
+    <!-- <img
         src="https://via.placeholder.com/1920x600"
         class="img-fluid hero"
         alt="Responsive image"
-      >
-      <img
-        src="https://via.placeholder.com/450x450"
-        alt="..."
-        class="img-thumbnail profile position-absolute"
-      >
+      > -->
     </div>
   </div>
 </template>
@@ -21,12 +23,15 @@ export default {}
 
 <style lang="scss" scoped>
 .profile-image {
-    .hero {}
-    .profile {
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, 0);
+    .hero {
+        background: url("https://via.placeholder.com/1920x600");
+        height: 600px;
+        .profile {
+          transform: translate(-50%, -50%);
+            left: 50%;
+            top: 100%;
 
+        }
     }
 }
 </style>
