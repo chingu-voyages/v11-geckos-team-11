@@ -70,3 +70,17 @@ exports.login = async (req, res, next) => {
     });
   }
 };
+
+// overwrite jwt cookie & make it expire immediately
+exports.logout = (req, res) => {
+  res.cookie("jwt", "loggedout", {
+    expires: new Date(Date.now() + 10 * 1000),
+    // using httpOnly, because we don't want to allow client side script access to the cookie
+    httpOnly: true
+  });
+
+  res.status(200).json({
+    status: 'success',
+    message: 'Logged out successfully'
+  })
+};
