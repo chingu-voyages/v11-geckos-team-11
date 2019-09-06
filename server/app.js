@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const userRouter = require("./routes/userRoutes");
+const globalErrorHandler = require("./controllers/errorController");
 
 // Start Express app
 const app = express();
@@ -34,5 +35,7 @@ app.use((req, res, next) => {
 
 // 2) ROUTES
 app.use("/api/v1/users", userRouter);
+
+app.use(globalErrorHandler);
 
 module.exports = app;
