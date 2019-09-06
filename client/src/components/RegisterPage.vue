@@ -22,39 +22,39 @@
         action="POST"
         class="w-50 mx-auto form-group"
       >
-      <div class="input-group input-group-lg mb-4">
-        <span class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-        </span>
-        <input
-          id="email"
-          type="text"
-          class="form-control"
-          placeholder="Email"
-        >
-      </div>
-      <div class="input-group input-group-lg mb-4">
-        <span class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-key"></i></span>
-        </span>
-        <input
-          id="password"
-          type="text"
-          class="form-control"
-          placeholder="Password"
-        >
-      </div>
-      <div class="input-group input-group-lg mb-4">
-        <span class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-key"></i></span>
-        </span>
-        <input
-          id="email"
-          type="passwordconf"
-          class="form-control"
-          placeholder="Password Confirm"
-        >
-      </div>
+        <div class="input-group input-group-lg mb-4">
+          <span class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-envelope" /></span>
+          </span>
+          <input
+            id="email"
+            type="text"
+            class="form-control"
+            placeholder="Email"
+          >
+        </div>
+        <div class="input-group input-group-lg mb-4">
+          <span class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-key" /></span>
+          </span>
+          <input
+            id="password"
+            type="text"
+            class="form-control"
+            placeholder="Password"
+          >
+        </div>
+        <div class="input-group input-group-lg mb-4">
+          <span class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-key" /></span>
+          </span>
+          <input
+            id="email"
+            type="passwordconf"
+            class="form-control"
+            placeholder="Password Confirm"
+          >
+        </div>
         <button
           id="submit"
           type="submit"
