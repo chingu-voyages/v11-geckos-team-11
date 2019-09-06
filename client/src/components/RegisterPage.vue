@@ -1,6 +1,6 @@
 <template>
   <div class="register-form">
-    <div class="back-link mx-5 my-4">
+    <div class="back-link mx-5 mb-4 pt-5">
       <a href="/">Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
@@ -77,6 +77,7 @@ export default {}
 
 <style lang="scss" scoped>
 .register-form {
+    height: 100vh;
     background-color: #ffffff;
 }
 </style>
