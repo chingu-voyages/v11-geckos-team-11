@@ -1,7 +1,7 @@
 <template>
   <div class="login-form">
-    <div class="back-link mx-5 my-4">
-      <a href="/">Go Back</a>
+    <div class="back-link mx-5 mb-4 pt-5">
+      <a class="mt-5" href="/">Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
       <h3 class="main-header font-weight-bold">
@@ -58,6 +58,7 @@ export default {}
 
 <style lang="scss" scoped>
 .login-form {
+    height: 100vh;
     background-color: #ffffff;
 }
 </style>
