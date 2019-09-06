@@ -1,5 +1,5 @@
 <template>
-  <div class="user-name text-center">
+  <div class="user-name text-center border-bottom">
     <div class="h3">
       John Doe
     </div>
@@ -36,7 +36,7 @@ export default {}
 
 <style lang="scss" scoped>
 .user-name {
-    height: 600px;
+    height: 400px;
     background-color: #ffffff;
     .icon-location {
         display: -webkit-inline-box;
