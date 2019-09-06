@@ -1,3 +1,4 @@
+const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const User = require("./../models/userModel");
 const catchAsync = require("./../utils/catchAsync");
@@ -74,3 +75,42 @@ exports.logout = (req, res) => {
     message: "Logged out successfully"
   });
 };
+
+// Give logged in users access to protected routes
+exports.protect = catchAsync(async (req, res, next) => {
+  // 1) Check if JWT was sent in header or is in cookie
+  // A) Check for Bearer in Reqest
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    token = req.headers.authorization.split(" ")[1];
+    // B) Check for Cookie with JWT
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
+  }
+
+  // No token present
+  if (!token) {
+    return next();
+  }
+
+  // 2) Verify token
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+  // 3) Check if user still exists
+  const currentUser = await User.findById(decoded.id);
+
+  if (!currentUser) {
+    return next();
+  }
+
+  // 4) To Do: Check if user has changed password after token was issued
+
+  // Attach current user to req object so we can use it later
+  req.user = currentUser;
+
+  // Grant access to protected route
+  next();
+});
