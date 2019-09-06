@@ -53,7 +53,6 @@ exports.login = catchAsync(async (req, res, next) => {
   // Adding password back to output
   const user = await User.findOne({ email }).select("+password");
   const correct = await user.correctPassword(password, user.password);
-  console.log(correct);
 
   if (!user || !correct) {
     return next(new AppError("Incorrect email or password", 401));
