@@ -2,14 +2,14 @@
   <div class="skills-bio">
     <div class="row">
       <div class="col">
-        <div class="skills w-50">
+        <div class="skills">
           <div class="h2 text-center">
             Skills
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="bio w-50">
+        <div class="bio px-5">
           <div class="h2 text-center">
             Bio
           </div>
@@ -33,7 +33,7 @@ export default {}
 
 <style lang="scss" scoped>
 .skills-bio {
-    padding-top: 5%;
+    padding: 5% 15% 0 15%;
     background-color: #ffffff;
 
     .bio {
