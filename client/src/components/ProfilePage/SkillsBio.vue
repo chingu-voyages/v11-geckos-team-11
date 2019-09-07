@@ -6,34 +6,37 @@
           <div class="h2 text-center">
             Skills
           </div>
-          <div class="skill-checks">
+          <div class="skill-checks text-center">
+
             <div class="row">
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>JAVASCRIPT</span>
+              <div class="col-lg-4 col-sm-12">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>HTML</span>
+              <div class="col-lg-4 col-sm-12 ">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>CSS</span>
+              <div class="col-lg-4 col-sm-12 ">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
             </div>
-          </div>
-          <div class="skill-checks">
+
             <div class="row">
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>NOTHING</span>
+              <div class="col-lg-4 col-sm-12">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>ELSE</span>
+              <div class="col-lg-4 col-sm-12 ">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
-              <div class="col">
-                <i class="fas fa-check-circle pr-2" /><span>MATTERS</span>
+              <div class="col-lg-4 col-sm-12 ">
+                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
             </div>
+
+
           </div>
         </div>
       </div>
+
       <div class="col">
         <div class="bio px-5">
           <div class="h2 text-center">
@@ -59,14 +62,15 @@ export default {}
 
 <style lang="scss" scoped>
 .skills-bio {
-    padding: 5% 15% 0;
+    padding: 5% 15%;
     background-color: #ffffff;
+    height: 100%;
 
     .skill-checks {
         font-size: 22px;
 
         .row {
-          margin: 2% 0 0 0;
+          margin: 0;
         }
 
     }
