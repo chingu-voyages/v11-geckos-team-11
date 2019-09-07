@@ -1,5 +1,5 @@
 <template>
-  <div class="user-name text-center border-bottom">
+  <div class="user-name text-center">
     <div class="h3">
       John Doe
     </div>

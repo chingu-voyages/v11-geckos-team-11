@@ -1,9 +1,10 @@
 <template>
   <div>
     <Navigation />
-    <Hero />
-    <UserName />
-    <SkillsBio />
+    <Hero class="border-bottom" />
+    <UserName class="border-bottom" />
+    <SkillsBio class="border-bottom" />
+    <Experience class="border-bottom" />
   </div>
 </template>
 
@@ -12,12 +13,14 @@ import Navigation from './Navigation.vue';
 import Hero from './ProfilePage/Hero.vue';
 import UserName from './ProfilePage/UserName.vue';
 import SkillsBio from './ProfilePage/SkillsBio.vue';
+import Experience from './ProfilePage/Experience.vue';
 export default {
   components: {
     Navigation,
     Hero,
     UserName,
-    SkillsBio
+    SkillsBio,
+    Experience,
   }
 }
 </script>
