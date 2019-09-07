@@ -7,7 +7,6 @@
             Skills
           </div>
           <div class="skill-checks text-center">
-
             <div class="row">
               <div class="col-lg-4 col-sm-12">
                 <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
@@ -31,8 +30,6 @@
                 <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
