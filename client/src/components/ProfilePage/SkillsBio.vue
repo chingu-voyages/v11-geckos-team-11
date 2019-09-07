@@ -6,6 +6,32 @@
           <div class="h2 text-center">
             Skills
           </div>
+          <div class="skill-checks">
+            <div class="row">
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>JAVASCRIPT</span>
+              </div>
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>HTML</span>
+              </div>
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-checks">
+            <div class="row">
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>NOTHING</span>
+              </div>
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>ELSE</span>
+              </div>
+              <div class="col">
+                <i class="fas fa-check-circle pr-2" /><span>MATTERS</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col">
@@ -33,11 +59,19 @@ export default {}
 
 <style lang="scss" scoped>
 .skills-bio {
-    padding: 5% 15% 0 15%;
+    padding: 5% 15% 0;
     background-color: #ffffff;
 
-    .bio {
+    .skill-checks {
+        font-size: 22px;
+
+        .row {
+          margin: 2% 0 0 0;
+        }
+
     }
+
+    .bio {}
 
 }
 </style>
