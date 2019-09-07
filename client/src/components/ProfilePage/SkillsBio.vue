@@ -9,25 +9,25 @@
           <div class="skill-checks text-center">
             <div class="row">
               <div class="col-lg-4 col-sm-12">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
               <div class="col-lg-4 col-sm-12 ">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
               <div class="col-lg-4 col-sm-12 ">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-4 col-sm-12">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
               <div class="col-lg-4 col-sm-12 ">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
               <div class="col-lg-4 col-sm-12 ">
-                <i class="fas fa-check-circle pr-2">JAVASCRIPT</i>
+                <i class="fas fa-check-circle pr-2"><span>Javascript</span></i>
               </div>
             </div>
           </div>
@@ -65,6 +65,9 @@ export default {}
 
     .skill-checks {
         font-size: 22px;
+        span {
+          font-family: Arial;
+        }
 
         .row {
           margin: 0;
