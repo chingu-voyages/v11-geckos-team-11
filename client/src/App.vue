@@ -21,9 +21,9 @@ export default {
 <style lang="scss">
 #app {
     background-color: #161618;
-    height: 100vh;
-
+    height: 100%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
     .container {
         max-width: 1920px;
         padding: 0;
