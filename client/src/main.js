@@ -1,7 +1,9 @@
 import Vue from 'vue';
+import axios from 'axios';
 import App from './App.vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
+import store from './store'
 const router = new VueRouter({
   routes,
   mode: 'history'
@@ -14,10 +16,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 Vue.config.productionTip = false
 
-
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
+// Setting up default vue's http module to use axios
+Vue.prototype.$http = axios;
+
+// Check if there is a token in local storage
+const token = localStorage.getItem('jwt');
+
+// If there is a token, append default axios authorization headers
+if(token) {
+  Vue.prototype.$http.default.headers.common['Authorization'] = token;
+}
+
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
