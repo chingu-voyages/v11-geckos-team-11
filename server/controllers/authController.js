@@ -1,5 +1,7 @@
+const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const User = require("./../models/userModel");
+const AppError = require("./../utils/appError");
 const catchAsync = require("./../utils/catchAsync");
 
 const signToken = id => {
@@ -44,17 +46,15 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // 1) Check if email and password exist
   if (!email || !password) {
-    return next();
+    return next(new AppError("Please provide email and password", 400));
   }
 
   // 2) Check if user exists & password correct
   // Adding password back to output
   const user = await User.findOne({ email }).select("+password");
-  const correct = await user.correctPassword(password, user.password);
-  console.log(correct);
 
-  if (!user || !correct) {
-    return next();
+  if (!user || !(await user.correctPassword(password, user.password))) {
+    return next(new AppError("Incorrect email or password", 401));
   }
 
   // 3) Send token to client if everything is okay
@@ -74,3 +74,44 @@ exports.logout = (req, res) => {
     message: "Logged out successfully"
   });
 };
+
+// Give logged in users access to protected routes
+exports.protect = catchAsync(async (req, res, next) => {
+  // 1) Check if JWT was sent in header or is in cookie
+  // A) Check for Bearer in Reqest
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    token = req.headers.authorization.split(" ")[1];
+    // B) Check for Cookie with JWT
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
+  }
+
+  // No token present
+  if (!token) {
+    return next(
+      new AppError("You are not logged in! Please log in or register.", 400)
+    );
+  }
+
+  // 2) Verify token
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+  // 3) Check if user still exists
+  const currentUser = await User.findById(decoded.id);
+
+  if (!currentUser) {
+    return next("The user with that token does no longer exist", 401);
+  }
+
+  // 4) To Do: Check if user has changed password after token was issued
+
+  // Attach current user to req object so we can use it later
+  req.user = currentUser;
+
+  // Grant access to protected route
+  next();
+});

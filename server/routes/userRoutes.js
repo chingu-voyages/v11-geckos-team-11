@@ -11,7 +11,7 @@ router.get("/logout", authController.logout);
 // Get All Users Route
 router
   .route("/")
-  .get(userController.getAllUsers)
+  .get(authController.protect, userController.getAllUsers)
   .post(userController.createUser);
 
 module.exports = router;
