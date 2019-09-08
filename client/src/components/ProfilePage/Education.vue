@@ -1,7 +1,7 @@
 <template>
   <div class="education">
     <div class="h2 text-center mb-5">
-      Education
+      Education / Courses
     </div>
 
     <div class="row text-center">
