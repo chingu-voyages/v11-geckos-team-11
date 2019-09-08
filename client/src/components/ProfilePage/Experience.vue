@@ -29,7 +29,7 @@ export default {}
 .experience {
     padding: 5% 10%;
 
-    height: 500px;
+    height: 100%;
     background-color: #ffffff;
 
     .row {
