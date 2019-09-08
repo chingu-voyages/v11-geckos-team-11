@@ -15,10 +15,7 @@
 
     <div class="row">
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Community
@@ -32,10 +29,7 @@
       </div>
 
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Skills
@@ -49,10 +43,7 @@
       </div>
 
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Learning
@@ -90,7 +81,8 @@ export default {}
 
         .col-item {
             display: flex;
-            img {
+            i {
+                font-size: 45px;
                 height: 50px;
                 width: auto;
                 left: -30px;
