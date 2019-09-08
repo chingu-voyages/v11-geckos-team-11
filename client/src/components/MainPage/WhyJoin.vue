@@ -15,10 +15,7 @@
 
     <div class="row">
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Community
@@ -32,10 +29,7 @@
       </div>
 
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Skills
@@ -49,10 +43,7 @@
       </div>
 
       <div class="col-md-4 col-item">
-        <img
-          src="https://via.placeholder.com/50x50"
-          alt=""
-        >
+        <i class="far fa-check-circle" />
         <div class="text-box w-75">
           <div class="h3">
             Learning
@@ -75,8 +66,8 @@ export default {}
 <style lang="scss" scoped>
 .why-join {
     background-color: white;
-    height: 720px;
-    padding-top: 5%;
+    height: 100%;
+    padding: 5% 0 5% 0;
     .text-center {
         .h1 {
             font-size: 40px;
@@ -90,7 +81,8 @@ export default {}
 
         .col-item {
             display: flex;
-            img {
+            i {
+                font-size: 60px;
                 height: 50px;
                 width: auto;
                 left: -30px;
