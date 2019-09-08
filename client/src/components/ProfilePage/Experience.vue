@@ -4,32 +4,17 @@
       Experience
     </div>
 
-    <div class="row font-weight-bold">
-      <div class="col">
-        Position:
-      </div>
-      <div class="col">
-        Where:
-      </div>
-      <div class="col">
-        Description:
-      </div>
-      <div class="col">
-        Date:
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
+    <div class="row text-center">
+      <div class="col-sm">
         Junior Web Developer
       </div>
-      <div class="col">
+      <div class="col-sm">
         Google
       </div>
-      <div class="col">
+      <div class="col-sm">
         Description goes here
       </div>
-      <div class="col">
+      <div class="col-sm">
         Aug, 2017 - present
       </div>
     </div>
