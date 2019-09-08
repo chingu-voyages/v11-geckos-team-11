@@ -11,9 +11,13 @@ const app = express();
 
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
-// CORS-enabled for all origins!
-app.use(cors());
-
+// CORS-enabled for localhost
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+    credentials: true
+  })
+);
 // Development logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
