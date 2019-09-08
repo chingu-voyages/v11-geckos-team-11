@@ -35,6 +35,7 @@
           class="btn btn-outline-danger mx-3 px-4"
           role="button"
           v-if="isLoggedIn"
+          @click.prevent="logoutUser"
         >Logout</a>
       </div>
     </div>
@@ -42,10 +43,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
     ...mapGetters(["isLoggedIn"])
+  },
+  methods: {
+    ...mapActions(["logout"]),
+    logoutUser() {
+      this.logout();
+    }
   }
 };
 </script>
