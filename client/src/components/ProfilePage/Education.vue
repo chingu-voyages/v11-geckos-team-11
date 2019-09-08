@@ -3,9 +3,9 @@
     <div class="h2 text-center mb-5">
       Education
     </div>
-    
+
     <div class="row text-center">
-      <div class="col-sm text-weight-bold">
+      <div class="col-sm font-weight-bold">
         VueJs Course
       </div>
       <div class="col-sm">
