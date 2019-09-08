@@ -5,6 +5,7 @@
     <UserName class="border-bottom" />
     <SkillsBio class="border-bottom" />
     <Experience class="border-bottom" />
+    <Education class="border-bottom" />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Hero from './ProfilePage/Hero.vue';
 import UserName from './ProfilePage/UserName.vue';
 import SkillsBio from './ProfilePage/SkillsBio.vue';
 import Experience from './ProfilePage/Experience.vue';
+import Education from './ProfilePage/Education.vue';
 export default {
   components: {
     Navigation,
@@ -21,6 +23,7 @@ export default {
     UserName,
     SkillsBio,
     Experience,
+    Education,
   }
 }
 </script>

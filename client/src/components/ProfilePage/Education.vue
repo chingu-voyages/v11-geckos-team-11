@@ -1,18 +1,18 @@
 <template>
-  <div class="experience">
+  <div class="education">
     <div class="h2 text-center mb-5">
-      Experience
+      Education
     </div>
-
+    
     <div class="row text-center">
       <div class="col-sm text-weight-bold">
-        Junior Web Developer
+        VueJs Course
       </div>
       <div class="col-sm">
-        Google
+        Udemy
       </div>
       <div class="col-sm">
-        Description goes here
+        Learned the basics
       </div>
       <div class="col-sm">
         Aug, 2017 - present
@@ -22,11 +22,12 @@
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
 
 <style lang="scss" scoped>
-.experience {
+.education {
     padding: 5% 10%;
 
     height: 500px;
