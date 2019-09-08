@@ -6,6 +6,7 @@
     <SkillsBio class="border-bottom" />
     <Experience class="border-bottom" />
     <Education class="border-bottom" />
+    <Projects class="border-bottom" />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import UserName from './ProfilePage/UserName.vue';
 import SkillsBio from './ProfilePage/SkillsBio.vue';
 import Experience from './ProfilePage/Experience.vue';
 import Education from './ProfilePage/Education.vue';
+import Projects from './ProfilePage/Projects.vue';
 export default {
   components: {
     Navigation,
@@ -24,6 +26,7 @@ export default {
     SkillsBio,
     Experience,
     Education,
+    Projects
   }
 }
 </script>
