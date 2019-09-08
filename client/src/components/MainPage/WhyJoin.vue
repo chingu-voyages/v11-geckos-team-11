@@ -66,8 +66,8 @@ export default {}
 <style lang="scss" scoped>
 .why-join {
     background-color: white;
-    height: 720px;
-    padding-top: 5%;
+    height: 100%;
+    padding: 5% 0 5% 0;
     .text-center {
         .h1 {
             font-size: 40px;
@@ -82,7 +82,7 @@ export default {}
         .col-item {
             display: flex;
             i {
-                font-size: 45px;
+                font-size: 60px;
                 height: 50px;
                 width: auto;
                 left: -30px;
