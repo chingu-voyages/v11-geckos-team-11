@@ -1,51 +1,35 @@
 <template>
   <div class="login-form">
     <div class="back-link mx-5 mb-4 pt-5">
-      <a
-        class="mt-5"
-        href="/"
-      >Go Back</a>
+      <a class="mt-5" href="/">Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
-      <h3 class="main-header font-weight-bold">
-        Great to see you back.
-      </h3>
-      <h3 class="sub-header mx-4 my-4">
-        Sign In
-      </h3>
-      <form
-        action="POST"
-        class="w-50 mx-auto form-group"
-      >
+      <h3 class="main-header font-weight-bold">Great to see you back.</h3>
+      <h3 class="sub-header mx-4 my-4">Sign In</h3>
+      <form @submit.prevent="loginUser" class="w-50 mx-auto form-group">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
-            <span class="input-group-text"><i class="fa fa-envelope" /></span>
+            <span class="input-group-text">
+              <i class="fa fa-envelope" />
+            </span>
           </span>
-          <input
-            id="email"
-            type="text"
-            class="form-control"
-            placeholder="Email"
-          >
+          <input id="email" type="email" class="form-control" placeholder="Email" v-model="email" />
         </div>
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-key" /></span>
+            <span class="input-group-text">
+              <i class="fas fa-key" />
+            </span>
           </span>
           <input
             id="password"
-            type="text"
+            type="password"
             class="form-control"
             placeholder="Password"
-          >
+            v-model="password"
+          />
         </div>
-        <button
-          id="submit"
-          type="submit"
-          class="btn btn-outline-success py-2 px-5 my-3"
-        >
-          Log In
-        </button>
+        <button id="submit" type="submit" class="btn btn-outline-success py-2 px-5 my-3">Log In</button>
       </form>
       <div class="register-text mb-3">
         New to DevTribe?
@@ -56,12 +40,39 @@
 </template>
 
 <script>
-export default {}
+import { mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    ...mapActions(["login"]),
+    loginUser() {
+      console.log(this.email, this.password);
+      let user = {
+        email: this.email,
+        password: this.password
+      };
+      this.login(user)
+        .then(res => {
+          if (res.data.status === "success") {
+            this.$router.push("/");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .login-form {
-    height: 100vh;
-    background-color: #ffffff;
+  height: 100vh;
+  background-color: #ffffff;
 }
 </style>

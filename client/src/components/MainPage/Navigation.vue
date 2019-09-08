@@ -23,18 +23,19 @@
           role="button"
           v-if="!isLoggedIn"
         >Join</a>
-        <a
-          href="/posts"
-          class="btn btn-outline-success mx-3 px-4"
-          role="button"
-          v-if="isLoggedIn"
-        >Join</a>
+        <a href="/posts" class="nav-item nav-link mx-3" role="button" v-if="isLoggedIn">Posts</a>
         <a
           href="/dashboard"
-          class="btn btn-outline-success mx-3 px-4"
+          class="nav-item nav-link mx-3"
           role="button"
           v-if="isLoggedIn"
-        >Join</a>
+        >Dashboard</a>
+        <a
+          href="/dashboard"
+          class="btn btn-outline-danger mx-3 px-4"
+          role="button"
+          v-if="isLoggedIn"
+        >Logout</a>
       </div>
     </div>
   </nav>
