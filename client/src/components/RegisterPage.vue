@@ -4,8 +4,12 @@
       <a href="/">Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
-      <h3 class="main-header font-weight-bold">Great to have you.</h3>
-      <h3 class="sub-header mx-4 my-5 font-italic">Register. It's free.</h3>
+      <h3 class="main-header font-weight-bold">
+        Great to have you.
+      </h3>
+      <h3 class="sub-header mx-4 my-5 font-italic">
+        Register. It's free.
+      </h3>
       <!-- <div class="form-group">
           <div class="input-group input-group-lg">
             <div class="input-group-prepend">
@@ -14,7 +18,10 @@
             <input type="email" class="form-control" placeholder="Email">
           </div>
       </div>-->
-      <form @submit.prevent="registerUser" class="w-50 mx-auto form-group">
+      <form
+        class="w-50 mx-auto form-group"
+        @submit.prevent="registerUser"
+      >
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
             <span class="input-group-text">
@@ -23,12 +30,12 @@
           </span>
           <input
             id="email"
+            v-model="email"
             type="email"
             class="form-control"
             placeholder="Email"
-            v-model="email"
             required
-          />
+          >
         </div>
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
@@ -38,12 +45,12 @@
           </span>
           <input
             id="password"
+            v-model="password"
             type="password"
             class="form-control"
             placeholder="Password"
-            v-model="password"
             required
-          />
+          >
         </div>
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
@@ -53,14 +60,20 @@
           </span>
           <input
             id="passwordConfirm"
+            v-model="passwordConfirm"
             type="password"
             class="form-control"
             placeholder="Password Confirm"
-            v-model="passwordConfirm"
             required
-          />
+          >
         </div>
-        <button id="submit" type="submit" class="btn btn-outline-success py-2 px-5 my-3">Join Now</button>
+        <button
+          id="submit"
+          type="submit"
+          class="btn btn-outline-success py-2 px-5 my-3"
+        >
+          Join Now
+        </button>
       </form>
       <div class="login-text mb-3">
         Already registered?

@@ -1,19 +1,35 @@
 <template>
   <div class="login-form">
     <div class="back-link mx-5 mb-4 pt-5">
-      <a class="mt-5" href="/">Go Back</a>
+      <a
+        class="mt-5"
+        href="/"
+      >Go Back</a>
     </div>
     <div class="text-center mx-5 my-5">
-      <h3 class="main-header font-weight-bold">Great to see you back.</h3>
-      <h3 class="sub-header mx-4 my-4">Sign In</h3>
-      <form @submit.prevent="loginUser" class="w-50 mx-auto form-group">
+      <h3 class="main-header font-weight-bold">
+        Great to see you back.
+      </h3>
+      <h3 class="sub-header mx-4 my-4">
+        Sign In
+      </h3>
+      <form
+        class="w-50 mx-auto form-group"
+        @submit.prevent="loginUser"
+      >
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
             <span class="input-group-text">
               <i class="fa fa-envelope" />
             </span>
           </span>
-          <input id="email" type="email" class="form-control" placeholder="Email" v-model="email" />
+          <input
+            id="email"
+            v-model="email"
+            type="email"
+            class="form-control"
+            placeholder="Email"
+          >
         </div>
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
@@ -23,13 +39,19 @@
           </span>
           <input
             id="password"
+            v-model="password"
             type="password"
             class="form-control"
             placeholder="Password"
-            v-model="password"
-          />
+          >
         </div>
-        <button id="submit" type="submit" class="btn btn-outline-success py-2 px-5 my-3">Log In</button>
+        <button
+          id="submit"
+          type="submit"
+          class="btn btn-outline-success py-2 px-5 my-3"
+        >
+          Log In
+        </button>
       </form>
       <div class="register-text mb-3">
         New to DevTribe?
