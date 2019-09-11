@@ -53,7 +53,10 @@
           Log In
         </button>
       </form>
-      <div class="register-text mb-3">
+      <div class="reset-text">
+        <a href="/reset">I forgot my password</a>
+      </div>
+      <div class="register-text my-2">
         New to DevTribe?
         <a href="/register">Create account</a>
       </div>
