@@ -33,6 +33,21 @@ const actions = {
     return res;
   },
 
+  // Register action
+  async register({ commit }, newUser) {
+    commit('auth_request')
+    let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser, { withCredentials: true});
+
+    if (res.data.status === 'success') {
+      const newUser = res.data.user;
+      const token = res.data.token;
+      localStorage.setItem('jwt', token)
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      commit('auth_success', { token, newUser }  );
+    }
+    return res;
+  },
+
   // Logout
   async logout({
     commit
@@ -46,8 +61,6 @@ const actions = {
       return
     }
   }
-
-  // Register action
 }
 
 const mutations = {
