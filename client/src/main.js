@@ -39,9 +39,10 @@ axios.interceptors.response.use(
     return response
   },
   function(error) {
-    if(error.response) {
+    if(error) {
       toast.error(error.response.data.message);
     }
+    return error
   }
 )
 
