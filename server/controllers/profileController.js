@@ -1,7 +1,8 @@
 const Profile = require("./../models/profileModel");
+const AppError = require("./../utils/appError");
 const catchAsync = require("./../utils/catchAsync");
 
-exports.create = catchAsync(async (req, res) => {
+exports.createProfile = catchAsync(async (req, res) => {
   const {
     company,
     website,
@@ -43,5 +44,15 @@ exports.create = catchAsync(async (req, res) => {
     { $set: profileFields },
     { new: true, upsert: true }
   );
+  res.json(profile);
+});
+
+exports.getProfile = catchAsync(async (req, res, next) => {
+  const profile = await Profile.findOne({
+    user: req.params.user_id
+  });
+
+  if (!profile) next(new AppError("Profile not found", 400));
+
   res.json(profile);
 });

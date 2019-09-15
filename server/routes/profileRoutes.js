@@ -4,6 +4,10 @@ const profileController = require("./../controllers/profileController");
 
 const router = express.Router();
 
-router.post("/", authController.protect, profileController.create);
+router.use(authController.protect);
+
+router.post("/", profileController.createProfile);
+
+router.get("/user/:user_id", profileController.getProfile);
 
 module.exports = router;
