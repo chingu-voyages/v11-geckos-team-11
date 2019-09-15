@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -80,23 +80,17 @@ export default {
       passwordConfirm: ""
     };
   },
+  computed: {
+    ...mapState(["errors"])
+  },
   methods: {
-    ...mapActions(["register"]),
     registerUser() {
-      let newUser = {
+      const newUser = {
         email: this.email,
         password: this.password,
         passwordConfirm: this.passwordConfirm
       };
-      this.register(newUser)
-        .then(res => {
-          if (res.data.status === "success") {
-            this.$router.push("/");
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.$store.dispatch("register", newUser);
     }
   }
 };

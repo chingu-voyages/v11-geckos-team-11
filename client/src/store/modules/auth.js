@@ -1,10 +1,12 @@
 import axios from 'axios';
-import router from './../../routes'
+import router from './../../routes';
+import toast from './../../helpers/toast';
 
 const state = {
   token: localStorage.getItem('token') || '',
   user: {},
-  status: ''
+  status: '',
+  errors: {}
 }
 
 const getters = {
@@ -18,33 +20,44 @@ const actions = {
   async login( { commit }, user) {
     commit('auth_request');
 
-    const config = {
-      withCredentials: true
+    try {
+      const res = await axios.post('http://localhost:3000/api/v1/users/login', user, { withCredentials: true});
+      if (res.data.status === 'success') {
+        const token = res.data.token;
+        const user = res.data.user;
+        localStorage.setItem('jwt', token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        commit('auth_success', { token, user }  );
+        toast.success(res.data.message)
+        router.push('/')
+      }
+      return res;
+    } catch (error) {
+      commit('set_errors', error.response.data)
+      toast.error(error.response.data.message);
     }
-    const res = await axios.post('http://localhost:3000/api/v1/users/login', user, { withCredentials: true});
-    if (res.data.status === 'success') {
-      const token = res.data.token;
-      const user = res.data.user;
-      localStorage.setItem('jwt', token);
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      commit('auth_success', { token, user }  );
-    }
-    return res;
   },
 
   // Register action
   async register({ commit }, newUser) {
     commit('auth_request')
-    let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser, { withCredentials: true});
+    try {
+      let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser, { withCredentials: true});
 
-    if (res.data.status === 'success') {
-      const newUser = res.data.user;
-      const token = res.data.token;
-      localStorage.setItem('jwt', token)
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      commit('auth_success', { token, newUser }  );
+      if (res.data.status === 'success') {
+        const newUser = res.data.user;
+        const token = res.data.token;
+        localStorage.setItem('jwt', token)
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        commit('auth_success', { token, newUser }  );
+        router.push('/')
+        toast.success(res.data.message)
+      }
+      return res;
+    } catch (error) {
+      commit('set_errors', error.response.data)
+      toast.error(error.response.data.message);
     }
-    return res;
   },
 
   // Logout
@@ -57,6 +70,7 @@ const actions = {
       await localStorage.removeItem('jwt')
       delete axios.defaults.headers.common['Authorization'];
       router.push('/')
+      toast.success('Sucessfully logged out...')
       return
     }
   }
@@ -71,9 +85,8 @@ const mutations = {
     state.user
     state.status = 'success'
   },
-  auth_error(state, errMsg) {
-    state.status = 'fail',
-    state.error = errMsg
+  set_errors(state, errors) {
+    state.errors = errors;
   },
   logout(state) {
     state.status = ''

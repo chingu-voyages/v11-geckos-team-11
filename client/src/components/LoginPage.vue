@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -51,22 +51,16 @@ export default {
       password: ""
     };
   },
+  computed: {
+    ...mapState(["errors"])
+  },
   methods: {
-    ...mapActions(["login"]),
     loginUser() {
-      let user = {
+      const user = {
         email: this.email,
         password: this.password
       };
-      this.login(user)
-        .then(res => {
-          if (res.data.status === "success") {
-            this.$router.push("/");
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.$store.dispatch("login", user);
     }
   }
 };
