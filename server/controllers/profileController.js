@@ -1,6 +1,12 @@
 const Profile = require("./../models/profileModel");
+const User = require("./../models/userModel");
 const AppError = require("./../utils/appError");
 const catchAsync = require("./../utils/catchAsync");
+
+exports.getAllProfiles = catchAsync(async (req, res) => {
+  const profiles = await Profile.find().populate("user", ["email"]);
+  res.json(profiles);
+});
 
 exports.createProfile = catchAsync(async (req, res) => {
   const {
@@ -50,9 +56,50 @@ exports.createProfile = catchAsync(async (req, res) => {
 exports.getProfile = catchAsync(async (req, res, next) => {
   const profile = await Profile.findOne({
     user: req.params.user_id
-  });
+  }).populate("user", ["email"]);
 
   if (!profile) next(new AppError("Profile not found", 400));
 
   res.json(profile);
+});
+
+exports.deleteProfile = catchAsync(async (req, res) => {
+  // Remove Profile
+  await Profile.findOneAndRemove({ user: req.user.id });
+  // Remove User
+  await User.findOneAndRemove({ _id: req.user.id });
+});
+
+exports.addExperience = catchAsync(async (req, res) => {
+  const { title, company, location, from, to, current, description } = req.body;
+
+  const newExp = {
+    title,
+    company,
+    location,
+    from,
+    to,
+    current,
+    description
+  };
+
+  const profile = await Profile.findOne({ user: req.user.id });
+  profile.experience.unshift(newExp);
+
+  await profile.save();
+
+  res.json(profile);
+});
+
+exports.deleteExperience = catchAsync(async (req, res, next) => {
+  const foundProfile = await Profile.findOne({ user: req.user.id });
+  const expIds = foundProfile.experience.map(exp => exp._id.toString());
+  const removeIndex = expIds.indexOf(req.params.exp_id);
+
+  if (removeIndex === -1) {
+    return next(new AppError("Cannot delete experience", 400));
+  }
+  foundProfile.experience.splice(removeIndex, 1);
+  await foundProfile.save();
+  return res.status(200).json(foundProfile);
 });
