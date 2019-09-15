@@ -3,7 +3,8 @@ import axios from 'axios';
 import App from './App.vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
-import store from './store'
+import store from './store';
+import toast from './helpers/toast';
 const router = new VueRouter({
   routes,
   mode: 'history'
@@ -29,6 +30,20 @@ const token = localStorage.getItem('jwt');
 if(token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token;
 }
+
+// Interceptor Error handling
+axios.interceptors.response.use(
+  function(response) {
+    toast.success(response.data.message)
+    console.log(response);
+    return response
+  },
+  function(error) {
+    if(error.response) {
+      toast.error(error.response.data.message);
+    }
+  }
+)
 
 new Vue({
   router,

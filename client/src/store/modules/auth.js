@@ -21,8 +21,7 @@ const actions = {
     const config = {
       withCredentials: true
     }
-
-    let res = await axios.post('http://localhost:3000/api/v1/users/login', user, { withCredentials: true});
+    const res = await axios.post('http://localhost:3000/api/v1/users/login', user, { withCredentials: true});
     if (res.data.status === 'success') {
       const token = res.data.token;
       const user = res.data.user;
@@ -45,7 +44,6 @@ const actions = {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       commit('auth_success', { token, newUser }  );
     }
-    return res;
   },
 
   // Logout
@@ -72,11 +70,16 @@ const mutations = {
     state.user
     state.status = 'success'
   },
+  auth_error(state, errMsg) {
+    state.status = 'fail',
+    state.error = errMsg
+  },
   logout(state) {
     state.status = ''
     state.token = ''
     state.user = {}
- }
+ },
+
 }
 
 export default {
