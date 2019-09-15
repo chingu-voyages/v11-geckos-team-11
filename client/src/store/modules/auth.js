@@ -44,6 +44,7 @@ const actions = {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       commit('auth_success', { token, newUser }  );
     }
+    return res;
   },
 
   // Logout

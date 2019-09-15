@@ -31,7 +31,7 @@ if(token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token;
 }
 
-// Interceptor Error handling
+// Axios interceptor
 axios.interceptors.response.use(
   function(response) {
     toast.success(response.data.message)
