@@ -1,14 +1,8 @@
 import Vue from 'vue';
 import axios from 'axios';
 import App from './App.vue';
-import VueRouter from 'vue-router';
-import routes from './routes';
+import router from './router';
 import store from './store';
-import toast from './helpers/toast';
-const router = new VueRouter({
-  routes,
-  mode: 'history'
-});
 
 import Vuex from 'vuex';
 
@@ -17,7 +11,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 Vue.config.productionTip = false
 
-Vue.use(VueRouter)
 Vue.use(Vuex)
 
 // Setting up default vue's http module to use axios

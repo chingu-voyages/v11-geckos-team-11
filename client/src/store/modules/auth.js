@@ -1,6 +1,6 @@
 import axios from 'axios';
-import router from './../../routes';
-import toast from './../../helpers/toast';
+import router from '../../router';
+import toast from '../../helpers/toast';
 
 const state = {
   token: localStorage.getItem('token') || '',
@@ -28,8 +28,8 @@ const actions = {
         localStorage.setItem('jwt', token);
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         commit('auth_success', { token, user }  );
-        toast.success(res.data.message)
-        router.push('/')
+        toast.success(res.data.message);
+        router.push({ path: '/' })
       }
       return res;
     } catch (error) {
@@ -50,7 +50,7 @@ const actions = {
         localStorage.setItem('jwt', token)
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         commit('auth_success', { token, newUser }  );
-        router.push('/')
+        router.push('/profile')
         toast.success(res.data.message)
       }
       return res;
