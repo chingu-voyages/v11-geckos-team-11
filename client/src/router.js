@@ -10,6 +10,22 @@ import ResetPage from './components/ResetPage.vue';
 
 Vue.use(Router);
 
+const ifNotLoggedIn = (to, from, next) => {
+  if (!store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/')
+}
+
+const ifLoggedIn = (to, from, next) => {
+  if (store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/login')
+}
+
 const router = new Router({
   mode: 'history',
   routes: [
@@ -20,16 +36,19 @@ const router = new Router({
     {
       path: '/register',
       component: RegisterPage,
+      beforeEnter: ifNotLoggedIn
     },
     {
       path: '/login',
       component: LoginPage,
       name: 'login',
+      beforeEnter: ifNotLoggedIn
     },
     {
       path: '/dashboard',
       component: Dashboard,
       name: 'dashboard',
+      beforeEnter: ifLoggedIn
     },
     {
       path: '/profile',

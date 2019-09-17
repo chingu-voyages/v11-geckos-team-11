@@ -1,7 +1,10 @@
 <template>
   <div class="reset-page">
     <div class="back-link mx-5 mb-4 pt-5">
-      <a class="mt-5" href="/">
+      <a
+        class="mt-5"
+        href="/"
+      >
         Go Back
       </a>
     </div>
@@ -10,23 +13,26 @@
         Recover your password
       </h3>
       <div class="reset-main-text text-center mb-4">
-          Enter the email address that you used to register. 
-          You'll get an email with a link to reset your password.
-        </div>
-      <form @submit.prevent="resetPassword" class="w-50 mx-auto form-group">
+        Enter the email address that you used to register. 
+        You'll get an email with a link to reset your password.
+      </div>
+      <form
+        class="w-50 mx-auto form-group"
+        @submit.prevent="resetPassword"
+      >
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-prepend">
             <span class="input-group-text">
-              <i class="fa fa-envelope"/>
+              <i class="fa fa-envelope" />
             </span>
           </span>
           <input 
             id="email" 
+            v-model="email" 
             type="email" 
             class="form-control" 
             placeholder="Email" 
-            v-model="email" 
-          />
+          >
         </div>
         <button 
           id="submit" 
@@ -37,8 +43,8 @@
         </button>
       </form>
       <div class="reset-help">
-          If you still need help, contact our 
-          <a href="#">Support</a>.
+        If you still need help, contact our 
+        <a href="#">Support</a>.
       </div>
     </div>
   </div>

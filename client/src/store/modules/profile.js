@@ -9,7 +9,7 @@ const state = {
 }
 
 const getters = {
-
+  getProfile: state => state.profile,
 }
 
 const actions = {

@@ -24,21 +24,6 @@ if(token) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 
-// Axios interceptor
-// axios.interceptors.response.use(
-//   function(response) {
-//     toast.success(response.data.message)
-//     console.log(response);
-//     return response
-//   },
-//   function(error) {
-//     if(error) {
-//       toast.error(error.response.data.message);
-//     }
-//     return error
-//   }
-// )
-
 new Vue({
   router,
   store,

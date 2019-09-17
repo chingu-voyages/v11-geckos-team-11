@@ -3,15 +3,14 @@ import router from '../../router';
 import toast from '../../helpers/toast';
 
 const state = {
-  token: localStorage.getItem('token') || '',
+  token: localStorage.getItem('jwt') || '',
   user: {},
-  status: '',
-  errors: {}
+  errors: {},
+  isLoading: false
 }
 
 const getters = {
   isLoggedIn: state => !!state.token, // returns true or false
-  authState: state => state.status,
   user: state => state.user
 }
 
@@ -70,6 +69,7 @@ const actions = {
       await localStorage.removeItem('jwt')
       delete axios.defaults.headers.common['Authorization'];
       toast.success('Sucessfully logged out...')
+      router.push('/')
       return
     }
   }
@@ -77,18 +77,16 @@ const actions = {
 
 const mutations = {
   auth_request(state) {
-    state.status = 'loading'
+    state.isLoading = true
   },
   auth_success(state, { token, user }) {
     state.token = token
     state.user = user
-    state.status = 'success'
   },
   set_errors(state, errors) {
     state.errors = errors;
   },
   logout(state) {
-    state.status = ''
     state.token = ''
     state.user = {}
  },
