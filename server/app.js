@@ -15,8 +15,8 @@ const app = express();
 // CORS-enabled for localhost
 app.use(
   cors({
-    origin: "http://localhost:8080",
-    credentials: true
+    origin: ["http://localhost:8080", "http://172.20.10.2:8080"],
+    credentials: false
   })
 );
 // Development logging

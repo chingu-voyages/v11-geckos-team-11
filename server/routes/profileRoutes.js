@@ -10,6 +10,7 @@ router.get("/github/:username", profileController.getGithub);
 
 // Protected routes
 router.use(authController.protect);
+router.get("/me", profileController.currentUserProfile);
 router.post("/", profileController.createProfile);
 router.delete("/", profileController.deleteProfile);
 router.put("/experience", profileController.addExperience);

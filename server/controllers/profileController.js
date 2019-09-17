@@ -60,6 +60,20 @@ exports.createProfile = catchAsync(async (req, res) => {
   res.json(profile);
 });
 
+// @route    GET api/v1/profile/me
+// @desc     Get current users profile
+// @access   Private
+exports.currentUserProfile = catchAsync(async (req, res, next) => {
+  const profile = await Profile.findOne({ user: req.user.id }).populate(
+    "user",
+    ["email"]
+  );
+
+  if (!profile) next(new AppError("Profile not found", 400));
+
+  res.json(profile);
+});
+
 // @route    GET api/v1/profile/user/:user_id
 // @desc     Get profile by user ID
 // @access   Public
@@ -68,7 +82,9 @@ exports.getProfile = catchAsync(async (req, res, next) => {
     user: req.params.user_id
   }).populate("user", ["email"]);
 
-  if (!profile) next(new AppError("Profile not found", 400));
+  if (!profile) {
+    return next(new AppError("Profile not found", 400));
+  }
 
   res.json(profile);
 });
