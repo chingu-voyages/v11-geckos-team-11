@@ -24,6 +24,16 @@ const actions = {
       commit('set_profile', {})
       toast.error(error.response.data.message);
     }
+  },
+
+  async deleteExperience( context, payload) {
+    try {
+      await axios.delete(`http://localhost:3000/api/v1/profile/experience/${payload}`);
+      context.dispatch('getCurrentUserProfile');
+      toast.success('Experience deleted')
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   }
 }
 
