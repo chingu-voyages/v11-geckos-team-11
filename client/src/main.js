@@ -21,7 +21,7 @@ const token = localStorage.getItem('jwt');
 
 // If there is a token, append default axios authorization headers
 if(token) {
-  axios.defaults.headers.common['Authorization'] = token;
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 
 // Axios interceptor

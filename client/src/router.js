@@ -42,16 +42,16 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  // false by default on the store.
-  if (to.name !== 'login') {
-    if(store.getters['isLoggedIn']) {
-      next();
-    } else {
-      next('/login');
-    }
-  }
-  next();
-})
+// router.beforeEach((to, from, next) => {
+//   // false by default on the store.
+//   if (to.name !== 'login') {
+//     if(store.getters['isLoggedIn']) {
+//       next();
+//     } else {
+//       next('/login');
+//     }
+//   }
+//   next();
+// })
 
 export default router;

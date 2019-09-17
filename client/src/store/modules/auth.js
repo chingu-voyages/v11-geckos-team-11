@@ -26,7 +26,7 @@ const actions = {
         const token = res.data.token;
         const user = res.data.user;
         localStorage.setItem('jwt', token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         commit('auth_success', { token, user }  );
         toast.success(res.data.message);
         router.push({ path: '/' })
@@ -48,7 +48,7 @@ const actions = {
         const newUser = res.data.user;
         const token = res.data.token;
         localStorage.setItem('jwt', token)
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         commit('auth_success', { token, newUser }  );
         router.push('/profile')
         toast.success(res.data.message)
