@@ -21,7 +21,7 @@ const actions = {
     commit('auth_request');
 
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/users/login', user, { withCredentials: true});
+      const res = await axios.post('http://localhost:3000/api/v1/users/login', user);
       if (res.data.status === 'success') {
         const token = res.data.token;
         const user = res.data.user;
@@ -42,7 +42,7 @@ const actions = {
   async register({ commit }, newUser) {
     commit('auth_request')
     try {
-      let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser, { withCredentials: true});
+      let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser);
 
       if (res.data.status === 'success') {
         const newUser = res.data.user;
@@ -64,12 +64,11 @@ const actions = {
   async logout({
     commit
   }) {
-    let res = await axios.get('http://localhost:3000/api/v1/users/logout', { withCredentials: true});
+    let res = await axios.get('http://localhost:3000/api/v1/users/logout');
     if (res.data.status === 'success') {
       commit('logout')
       await localStorage.removeItem('jwt')
       delete axios.defaults.headers.common['Authorization'];
-      router.push('/')
       toast.success('Sucessfully logged out...')
       return
     }
@@ -80,9 +79,9 @@ const mutations = {
   auth_request(state) {
     state.status = 'loading'
   },
-  auth_success(state, token, user) {
+  auth_success(state, { token, user }) {
     state.token = token
-    state.user
+    state.user = user
     state.status = 'success'
   },
   set_errors(state, errors) {

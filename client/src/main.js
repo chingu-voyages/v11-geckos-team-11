@@ -21,7 +21,7 @@ const token = localStorage.getItem('jwt');
 
 // If there is a token, append default axios authorization headers
 if(token) {
-  Vue.prototype.$http.defaults.headers.common['Authorization'] = token;
+  axios.defaults.headers.common['Authorization'] = token;
 }
 
 // Axios interceptor
