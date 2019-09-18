@@ -75,6 +75,46 @@
                     </div>
                   </div>
                 </template>
+
+                <!-- Education -->
+                <template>
+                  <div class="container">
+                    <div class="experience">
+                      <h4>Education Credentials</h4>
+                      <table v-if="profile.education.length > 0" class="table">
+                        <thead>
+                          <tr>
+                            <th>School</th>
+                            <th>Field of Study</th>
+                            <th>Degree</th>
+                            <th>Years</th>
+                            <th />
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="(education) in profile.education" :key="education._id">
+                            <td>{{ education.school }}</td>
+                            <td>{{ education.fieldofstudy }}</td>
+                            <td>{{ education.degree }}</td>
+                            <td>
+                              {{ education.from }} -
+                              <span>{{ !education.to ? " Now" : ' ' + education.to }}</span>
+                            </td>
+                            <td>
+                              <button
+                                class="btn btn-danger"
+                                @click.prevent="deleteEducation(education._id)"
+                              >Delete</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div v-else>
+                        <p>No Education Credentials Yet</p>
+                      </div>
+                    </div>
+                  </div>
+                </template>
               </div>
             </div>
           </div>
@@ -104,6 +144,9 @@ export default {
   methods: {
     deleteExperience(id) {
       this.$store.dispatch("deleteExperience", id);
+    },
+    deleteEducation(id) {
+      this.$store.dispatch("deleteEducation", id);
     }
   },
   mounted() {

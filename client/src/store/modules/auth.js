@@ -28,7 +28,7 @@ const actions = {
         // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         commit('auth_success', { token, user }  );
         toast.success(res.data.message);
-        router.push({ path: '/' })
+        router.push('/' )
       }
       return res;
     } catch (error) {
