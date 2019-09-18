@@ -1,9 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a
-      class="navbar-brand"
-      href="#"
-    >DevTribe</a>
+    <a class="navbar-brand" href="#">DevTribe</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,42 +12,22 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div
-      id="navbarNavAltMarkup"
-      class="collapse navbar-collapse justify-content-end"
-    >
+    <div id="navbarNavAltMarkup" class="collapse navbar-collapse justify-content-end">
       <div class="navbar-nav">
-        <a
-          class="nav-item nav-link mx-3"
-          href="#"
-        >Browse Devs</a>
+        <a class="nav-item nav-link mx-3" href="#">Browse Devs</a>
 
-        <a
-          v-if="!isLoggedIn"
-          class="nav-item nav-link mx-3"
-          href="/login"
-        >Login</a>
+        <a v-if="!isLoggedIn" class="nav-item nav-link mx-3" href="/login">Login</a>
         <a
           v-if="!isLoggedIn"
           href="/register"
           class="btn btn-outline-success mx-3 px-4"
           role="button"
         >Join</a>
+        <a v-if="isLoggedIn" href="/posts" class="nav-item nav-link mx-3" role="button">Posts</a>
+        <a v-if="isLoggedIn" href="/dashboard" class="nav-item nav-link mx-3" role="button">Profile</a>
         <a
           v-if="isLoggedIn"
-          href="/posts"
-          class="nav-item nav-link mx-3"
-          role="button"
-        >Posts</a>
-        <a
-          v-if="isLoggedIn"
-          href="/dashboard"
-          class="nav-item nav-link mx-3"
-          role="button"
-        >Dashboard</a>
-        <a
-          v-if="isLoggedIn"
-          href="/dashboard"
+          href="/profile"
           class="btn btn-outline-danger mx-3 px-4"
           role="button"
           @click.prevent="logoutUser"
