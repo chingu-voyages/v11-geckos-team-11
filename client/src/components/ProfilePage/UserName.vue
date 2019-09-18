@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .user-name {
-  height: 400px;
+  height: 300px;
   background-color: #ffffff;
   .icon-location {
     display: -webkit-inline-box;

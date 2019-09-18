@@ -32,7 +32,7 @@
           </tbody>
         </table>
         <div v-else>
-          <p>No Experience Yet</p>
+          <p>This looks pretty empty. You have no experience credentials yet</p>
         </div>
       </div>
     </div>

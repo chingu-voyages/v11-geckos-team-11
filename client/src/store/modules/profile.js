@@ -4,12 +4,14 @@ import toast from '../../helpers/toast';
 const state = {
   profile: null,
   profiles: null,
+  repos: null,
   loading: false
 
 }
 
 const getters = {
-  getProfile: state => state.profile
+  getProfile: state => state.profile,
+  getRepos: state => state.repos
 }
 
 const actions = {
@@ -25,7 +27,18 @@ const actions = {
       toast.error(error.response.data.message);
     }
   },
-
+  async getGithubRepos( context, payload) {
+    context.commit('set_loading', true)
+    try {
+      const res = await axios.get(`http://localhost:3000/api/v1/profile/github/${payload}`)
+      context.commit('set_repos', res.data)
+      context.commit('set_loading', false)
+      return res
+    } catch (error) {
+        context.commit('set_repos', {})
+        toast.error(error.response.data.message);
+    }
+  },
   async deleteExperience( context, payload) {
     try {
       await axios.delete(`http://localhost:3000/api/v1/profile/experience/${payload}`);
@@ -50,6 +63,9 @@ const actions = {
 const mutations = {
   set_profile(state, profile) {
     state.profile = profile
+  },
+  set_repos(state, repos) {
+    state.repos = repos
   },
   set_loading(state, loading) {
     state.loading = loading

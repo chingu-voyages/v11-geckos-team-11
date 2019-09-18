@@ -24,11 +24,11 @@
           role="button"
         >Join</a>
         <a v-if="isLoggedIn" href="/posts" class="nav-item nav-link mx-3" role="button">Posts</a>
-        <a v-if="isLoggedIn" href="/dashboard" class="nav-item nav-link mx-3" role="button">Profile</a>
+        <a v-if="isLoggedIn" href="/profile" class="nav-item nav-link mx-3" role="button">Profile</a>
         <a
+          href="#"
           v-if="isLoggedIn"
-          href="/profile"
-          class="btn btn-outline-danger mx-3 px-4"
+          class="btn btn-danger mx-3 px-4"
           role="button"
           @click.prevent="logoutUser"
         >Logout</a>

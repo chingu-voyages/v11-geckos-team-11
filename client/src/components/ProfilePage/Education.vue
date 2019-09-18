@@ -34,7 +34,7 @@
           </tbody>
         </table>
         <div v-else>
-          <p>No Education Credentials Yet</p>
+          <p>This looks pretty empty. You have no education credentials yet</p>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@
       class="border-bottom"
       @delete="deleteEducation"
     />
-    <Projects class="border-bottom" />
+    <Projects :repos="repos" class="border-bottom" />
   </div>
 </template>
 
@@ -48,11 +48,14 @@ export default {
     ...mapState({
       profile: state => state.profile.profile,
       user: state => state.profile.profile.user,
+      repos: state => state.profile.repos,
       loading: state => state.profile.loading
     })
   },
-  mounted() {
-    this.$store.dispatch("getCurrentUserProfile");
+  created() {
+    this.$store.dispatch("getCurrentUserProfile").then(() => {
+      this.$store.dispatch("getGithubRepos", this.profile.githubusername);
+    });
   },
   methods: {
     deleteExperience(id) {
