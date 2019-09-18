@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col">
         <div class="skills">
-          <div class="h2 text-center">Skills</div>
+          <div class="h2 text-center">
+            Skills
+          </div>
           <div class="skill-checks text-center">
             <div class="row">
               <div
@@ -22,8 +24,13 @@
 
       <div class="col">
         <div class="bio px-5">
-          <div class="h2 text-center">Bio</div>
-          <div v-if="bio" class="text-justify">
+          <div class="h2 text-center">
+            Bio
+          </div>
+          <div
+            v-if="bio"
+            class="text-justify"
+          >
             The details are not the details. They make the
             fucking design. Creativity is a fucking work-ethic. A good fucking
             composition is the result of a hierarchy consisting of clearly
@@ -31,7 +38,12 @@
             intervals of negative space. Practice won’t get you anywhere if you
             mindlessly fucking
           </div>
-          <p v-else class="text-center">This looks pretty empty. You have no bio yet.</p>
+          <p
+            v-else
+            class="text-center"
+          >
+            This looks pretty empty. You have no bio yet.
+          </p>
         </div>
       </div>
     </div>
@@ -40,7 +52,18 @@
 
 <script>
 export default {
-  props: ["skills", "bio"]
+  props: {
+    skills: {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    },
+    bio: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>
 

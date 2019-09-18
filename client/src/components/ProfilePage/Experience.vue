@@ -5,7 +5,10 @@
         <h2>Experience Credentials</h2>
       </div>
       <div class="row text-center">
-        <table v-if="experience.length > 0" class="table">
+        <table
+          v-if="experience.length > 0"
+          class="table"
+        >
           <thead>
             <tr>
               <th>Company</th>
@@ -15,7 +18,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(experience) in experience" :key="experience._id">
+            <tr
+              v-for="(experience) in experience"
+              :key="experience._id"
+            >
               <td>{{ experience.company }}</td>
               <td>{{ experience.title }}</td>
               <td>
@@ -26,7 +32,9 @@
                 <button
                   class="btn btn-danger"
                   @click.prevent="deleteExperience(experience._id)"
-                >Delete</button>
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>
@@ -43,7 +51,10 @@
 export default {
   props: {
     experience: {
-      type: Array
+      type: Array,
+      default: function() {
+        return [];
+      }
     }
   },
   methods: {

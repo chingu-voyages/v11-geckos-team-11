@@ -5,8 +5,17 @@
       <Spinner />
     </template>
     <Hero class="border-bottom" />
-    <UserName v-if="profile" :user="profile.user" class="border-bottom" />
-    <SkillsBio v-if="profile" :skills="profile.skills" :bio="profile.bio" class="border-bottom" />
+    <UserName
+      v-if="profile"
+      :user="profile.user"
+      class="border-bottom"
+    />
+    <SkillsBio
+      v-if="profile"
+      :skills="profile.skills"
+      :bio="profile.bio"
+      class="border-bottom"
+    />
     <Experience
       v-if="profile"
       :experience="profile.experience"
@@ -19,7 +28,10 @@
       class="border-bottom"
       @delete="deleteEducation"
     />
-    <Projects :repos="repos" class="border-bottom" />
+    <Projects
+      :repos="repos"
+      class="border-bottom"
+    />
   </div>
 </template>
 

@@ -1,10 +1,16 @@
 <template>
   <div class="user-name text-center">
-    <div class="h3">{{ user.email }}</div>
-    <div class="h4 font-weight-bold">Senior Frontend Developer</div>
+    <div class="h3">
+      {{ user.email }}
+    </div>
+    <div class="h4 font-weight-bold">
+      Senior Frontend Developer
+    </div>
     <div class="icon-location">
       <i class="pr-2 fas fa-map-marker-alt" />
-      <div class="h5">Hamburg, Germany</div>
+      <div class="h5">
+        Hamburg, Germany
+      </div>
     </div>
     <!-- ONLY IF EXISTS -->
     <div class="user-link">
@@ -15,13 +21,25 @@
       <!-- icons -->
     </div>
     <!-- ONLY IF CURRENT USER MATCHES THE PROFILE -->
-    <button type="button" class="btn btn btn-outline-warning text-uppercase mt-3">Edit Profile</button>
+    <button
+      type="button"
+      class="btn btn btn-outline-warning text-uppercase mt-3"
+    >
+      Edit Profile
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["user"]
+  props: {
+    user: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    }
+  }
 };
 </script>
 

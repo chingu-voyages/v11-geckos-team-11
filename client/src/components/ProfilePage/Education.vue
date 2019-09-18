@@ -5,7 +5,10 @@
         <h2>Education Credentials</h2>
       </div>
       <div class="row text-center">
-        <table v-if="education.length > 0" class="table">
+        <table
+          v-if="education.length > 0"
+          class="table"
+        >
           <thead>
             <tr>
               <th>School / Course Provider</th>
@@ -16,7 +19,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(education) in education" :key="education._id">
+            <tr
+              v-for="(education) in education"
+              :key="education._id"
+            >
               <td>{{ education.school }}</td>
               <td>{{ education.fieldofstudy }}</td>
               <td>{{ education.degree }}</td>
@@ -28,7 +34,9 @@
                 <button
                   class="btn btn-danger"
                   @click.prevent="deleteEducation(education._id)"
-                >Delete</button>
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>
@@ -45,7 +53,10 @@
 export default {
   props: {
     education: {
-      type: Array
+      type: Array,
+      default: function() {
+        return [];
+      }
     }
   },
   methods: {
