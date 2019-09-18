@@ -1,7 +1,7 @@
 <template>
   <div class="user-name text-center">
     <div class="h3">
-      John Doe
+      {{ user.email }}
     </div>
     <div class="h4 font-weight-bold">
       Senior Frontend Developer
@@ -31,23 +31,32 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    user: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .user-name {
-    height: 400px;
-    background-color: #ffffff;
-    .icon-location {
-        display: -webkit-inline-box;
-        i {
-            font-size: 22px;
-        }
+  height: 300px;
+  background-color: #ffffff;
+  .icon-location {
+    display: -webkit-inline-box;
+    i {
+      font-size: 22px;
     }
-    .user-link {
-      a {
-        text-decoration: underline;
-      }
+  }
+  .user-link {
+    a {
+      text-decoration: underline;
     }
+  }
 }
 </style>

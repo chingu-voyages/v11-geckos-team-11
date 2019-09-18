@@ -45,14 +45,10 @@ const router = new Router({
       beforeEnter: ifNotLoggedIn
     },
     {
-      path: '/dashboard',
-      component: Dashboard,
-      name: 'dashboard',
-      beforeEnter: ifLoggedIn
-    },
-    {
       path: '/profile',
-      component: ProfilePage
+      component: ProfilePage,
+      name: 'profile',
+      beforeEnter: ifLoggedIn
     },
     {
       path: '/reset',

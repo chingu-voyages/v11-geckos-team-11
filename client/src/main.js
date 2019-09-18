@@ -3,12 +3,15 @@ import axios from 'axios';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import moment from 'moment'
 
 import Vuex from 'vuex';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+
+Vue.prototype.moment = moment
 Vue.config.productionTip = false
 
 Vue.use(Vuex)

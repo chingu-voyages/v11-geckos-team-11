@@ -15,7 +15,13 @@
               </router-link>
             </p>
             <p>You have not yet setup a profile, please add some info</p>
-            <router-link tag="a" to="/create-profile" class="btn btn-lg btn-info">Create Profile</router-link>
+            <router-link
+              tag="a"
+              to="/create-profile"
+              class="btn btn-lg btn-info"
+            >
+              Create Profile
+            </router-link>
           </div>
         </template>
         <template v-else>
@@ -26,15 +32,30 @@
                   <h1>Dashboard</h1>
                   <h3>Welcome back, {{ user.email }}</h3>
                 </div>
-                <div class="btn-group btn-grou-lg mt-5" role="group">
-                  <router-link to="/edit-profile" class="btn btn-outline-secondary mr-2" tag="a">
-                    <i class="fas fa-user-circle text-info mr-1"></i> Edit Profile
+                <div
+                  class="btn-group btn-grou-lg mt-5"
+                  role="group"
+                >
+                  <router-link
+                    to="/edit-profile"
+                    class="btn btn-outline-secondary mr-2"
+                    tag="a"
+                  >
+                    <i class="fas fa-user-circle text-info mr-1" /> Edit Profile
                   </router-link>
-                  <router-link to="/add-experience" class="btn btn-outline-secondary mr-2" tag="a">
-                    <i class="fas fa-user-tie text-info mr-1"></i> Add Experience
+                  <router-link
+                    to="/add-experience"
+                    class="btn btn-outline-secondary mr-2"
+                    tag="a"
+                  >
+                    <i class="fas fa-user-tie text-info mr-1" /> Add Experience
                   </router-link>
-                  <router-link to="/add-education" class="btn btn-outline-secondary mr-2" tag="a">
-                    <i class="fas fa-graduation-cap text-info mr-1"></i> Add Education
+                  <router-link
+                    to="/add-education"
+                    class="btn btn-outline-secondary mr-2"
+                    tag="a"
+                  >
+                    <i class="fas fa-graduation-cap text-info mr-1" /> Add Education
                   </router-link>
                 </div>
 
@@ -43,7 +64,10 @@
                   <div class="container">
                     <div class="experience">
                       <h4>Experience Credentials</h4>
-                      <table v-if="profile.experience.length > 0" class="table">
+                      <table
+                        v-if="profile.experience.length > 0"
+                        class="table"
+                      >
                         <thead>
                           <tr>
                             <th>Company</th>
@@ -53,7 +77,10 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr v-for="(experience) in profile.experience" :key="experience._id">
+                          <tr
+                            v-for="(experience) in profile.experience"
+                            :key="experience._id"
+                          >
                             <td>{{ experience.company }}</td>
                             <td>{{ experience.title }}</td>
                             <td>
@@ -64,7 +91,9 @@
                               <button
                                 class="btn btn-danger"
                                 @click.prevent="deleteExperience(experience._id)"
-                              >Delete</button>
+                              >
+                                Delete
+                              </button>
                             </td>
                           </tr>
                         </tbody>
@@ -141,6 +170,9 @@ export default {
       loading: state => state.profile.loading
     })
   },
+  mounted() {
+    this.$store.dispatch("getCurrentUserProfile");
+  },
   methods: {
     deleteExperience(id) {
       this.$store.dispatch("deleteExperience", id);
@@ -148,9 +180,6 @@ export default {
     deleteEducation(id) {
       this.$store.dispatch("deleteEducation", id);
     }
-  },
-  mounted() {
-    this.$store.dispatch("getCurrentUserProfile");
   }
 };
 </script>

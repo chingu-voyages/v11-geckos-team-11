@@ -44,14 +44,14 @@
         >Posts</a>
         <a
           v-if="isLoggedIn"
-          href="/dashboard"
+          href="/profile"
           class="nav-item nav-link mx-3"
           role="button"
-        >Dashboard</a>
+        >Profile</a>
         <a
           v-if="isLoggedIn"
-          href="/dashboard"
-          class="btn btn-outline-danger mx-3 px-4"
+          href="#"
+          class="btn btn-danger mx-3 px-4"
           role="button"
           @click.prevent="logoutUser"
         >Logout</a>
