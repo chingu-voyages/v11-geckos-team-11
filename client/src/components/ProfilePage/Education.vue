@@ -21,8 +21,8 @@
               <td>{{ education.fieldofstudy }}</td>
               <td>{{ education.degree }}</td>
               <td>
-                {{ education.from }} -
-                <span>{{ education.current ? " present" : ' ' + education.to }}</span>
+                {{ moment(education.from).format('LL') }} -
+                <span>{{ education.current ? " Present" : moment(' ' + education.to).format('LL') }}</span>
               </td>
               <td>
                 <button

@@ -19,8 +19,8 @@
               <td>{{ experience.company }}</td>
               <td>{{ experience.title }}</td>
               <td>
-                {{ experience.from }} -
-                <span>{{ !experience.to ? " Now" : ' ' + experience.to }}</span>
+                {{ moment(experience.from).format('LL') }} -
+                <span>{{ experience.current ? " Present" : moment(' ' + experience.to).format('LL') }}</span>
               </td>
               <td>
                 <button
