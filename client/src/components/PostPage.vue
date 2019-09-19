@@ -5,35 +5,25 @@
         Welcome to the DevTribe Community
       </div>
       <div class="h5 font-weight-bold">
-        Ask question, share content, introduce yourself. Be nice!
+        Ask questions, share content, introduce yourself. Be nice!
       </div>
     </div>
 
-    <form class="text-area text-center mt-5 w-75 mx-auto">
-      <row>
-        <div class="col">
-          <textarea
-            name="post-text"
-            rows="6"
-            class="w-100"
-          />
-        </div>
-        <div class="col text-left">
-          <button
-            type="button"
-            class="btn btn-outline-dark"
-          >
-            Send
-          </button>
-        </div>
-      </row>
-    </form>
+    <Form></Form>
+    <Posts></Posts>
+
   </div>
 </template>
 
 <script>
+import Form from './PostPage/Form.vue';
+import Posts from './PostPage/Posts.vue';
 export default {
   name: 'PostPage',
+  components: {
+    Form,
+    Posts
+  },
   data() {
     return {
 
@@ -46,12 +36,7 @@ export default {
 #post-page {
     background-color: #ffffff;
     height: 100%;
+    padding: 0 20%;
 
-    .text-area {
-        height: 300px;
-        button {
-            width: 120px;
-        }
-    }
 }
 </style>
