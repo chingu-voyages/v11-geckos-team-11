@@ -23,31 +23,33 @@
         <a
           class="nav-item nav-link mx-3"
           href="#"
-        >Browse Devs</a>
+        ><router-link to="/browse">Browse Devs</router-link></a>
 
         <a
           v-if="!isLoggedIn"
           class="nav-item nav-link mx-3"
           href="/login"
-        >Login</a>
+        ><router-link to="/login">Login</router-link></a>
         <a
           v-if="!isLoggedIn"
           href="/register"
           class="btn btn-outline-success mx-3 px-4"
           role="button"
-        >Join</a>
+        ><router-link to="/register">Join</router-link></a>
         <a
           v-if="isLoggedIn"
           href="/posts"
           class="nav-item nav-link mx-3"
           role="button"
-        >Posts</a>
+        >
+          <router-link to="/posts">Posts</router-link>
+        </a>
         <a
           v-if="isLoggedIn"
           href="/profile"
           class="nav-item nav-link mx-3"
           role="button"
-        >Profile</a>
+        ><router-link to="/profile">Profile</router-link></a>
         <a
           v-if="isLoggedIn"
           href="#"
@@ -61,7 +63,9 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import {
+  mapGetters
+} from "vuex";
 export default {
   computed: {
     ...mapGetters(["isLoggedIn"])
@@ -76,12 +80,12 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  background-color: #424242 !important;
-  a {
-    font-size: 20px;
-  }
-  .navbar-brand {
-    font-size: 20px;
-  }
+    background-color: #424242 !important;
+    a {
+        font-size: 20px;
+    }
+    .navbar-brand {
+        font-size: 20px;
+    }
 }
 </style>

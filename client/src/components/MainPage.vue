@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navigation />
     <Jumbotron />
     <WhyJoin />
     <Footer />
@@ -8,13 +7,11 @@
 </template>
 
 <script>
-import Navigation from './Navigation.vue';
 import Jumbotron from './MainPage/Jumbotron.vue';
 import WhyJoin from './MainPage/WhyJoin.vue';
 import Footer from './MainPage/Footer.vue';
 export default {
   components: {
-    Navigation,
     Jumbotron,
     WhyJoin,
     Footer

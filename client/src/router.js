@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage.vue';
 import ProfilePage from './components/ProfilePage.vue';
 import Dashboard from './components/Dashboard.vue';
 import ResetPage from './components/ResetPage.vue';
+import PostPage from './components/PostPage.vue';
 
 Vue.use(Router);
 
@@ -53,7 +54,12 @@ const router = new Router({
     {
       path: '/reset',
       component: ResetPage
-    }
+    },
+    {
+      path: '/posts',
+      component: PostPage,
+      beforeEnter: ifLoggedIn
+    },
   ]
 })
 
