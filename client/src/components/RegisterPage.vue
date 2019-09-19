@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -92,9 +93,17 @@ export default {
       passwordConfirm: ""
     };
   },
+  computed: {
+    ...mapState(["errors"])
+  },
   methods: {
     registerUser() {
-      console.log(this.email, this.password, this.passwordConfirm);
+      const newUser = {
+        email: this.email,
+        password: this.password,
+        passwordConfirm: this.passwordConfirm
+      };
+      this.$store.dispatch("register", newUser);
     }
   }
 };

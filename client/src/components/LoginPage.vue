@@ -53,7 +53,10 @@
           Log In
         </button>
       </form>
-      <div class="register-text mb-3">
+      <div class="reset-text">
+        <a href="/reset">I forgot my password</a>
+      </div>
+      <div class="register-text my-2">
         New to DevTribe?
         <a href="/register">Create account</a>
       </div>
@@ -62,7 +65,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -70,23 +73,16 @@ export default {
       password: ""
     };
   },
+  computed: {
+    ...mapState(["errors"])
+  },
   methods: {
-    ...mapActions(["login"]),
     loginUser() {
-      console.log(this.email, this.password);
-      let user = {
+      const user = {
         email: this.email,
         password: this.password
       };
-      this.login(user)
-        .then(res => {
-          if (res.data.status === "success") {
-            this.$router.push("/");
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.$store.dispatch("login", user);
     }
   }
 };
