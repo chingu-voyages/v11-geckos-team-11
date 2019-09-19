@@ -155,13 +155,11 @@
 
 <script>
 import Spinner from "./common/Spinner";
-import Navigation from "./Navigation";
 import { mapState } from "vuex";
 
 export default {
   components: {
     Spinner,
-    Navigation
   },
   computed: {
     ...mapState({
