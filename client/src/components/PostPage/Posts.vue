@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 #posts {
     height: 100%;
-
+    
     .posts-box {
         height: 100%;
         font-size: 14px;
