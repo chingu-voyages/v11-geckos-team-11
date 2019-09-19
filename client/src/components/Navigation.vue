@@ -83,6 +83,8 @@ export default {
     background-color: #424242 !important;
     a {
         font-size: 20px;
+        text-decoration: none;
+        color: #ffffff
     }
     .navbar-brand {
         font-size: 20px;
