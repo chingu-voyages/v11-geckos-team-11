@@ -1,6 +1,6 @@
 <template>
   <div id="form">
-    <form class="text-area text-center mt-5 mx-auto w-75">
+    <form class="text-area text-center mt-5 mx-auto w-100">
       <div class="row">
         <div class="col-12">
           <textarea

@@ -9,9 +9,8 @@
       </div>
     </div>
 
-    <Form></Form>
-    <Posts></Posts>
-
+    <Form />
+    <Posts />
   </div>
 </template>
 

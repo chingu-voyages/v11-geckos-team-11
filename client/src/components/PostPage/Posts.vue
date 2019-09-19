@@ -1,26 +1,23 @@
 <template>
   <div
     id="posts"
-    class="mx-auto w-75"
+    class="mx-auto w-100"
   >
     <div class="posts-box border border-dark">
-      <div class="row">
-        <div class="col-4 user mx-auto my-auto">
+      <div class="row px-3 py-4">
+        <div class="col-md-3 user mx-auto my-auto text-center">
           <img
             src="https://via.placeholder.com/120x100"
             class="img-fluid text-center"
             alt="Responsive image"
           >
-          <div>
-            <div class="username text-center">
-              John Doe
-            </div>
-            <div class="member-date">
-              Member since May 2018
-            </div>
+          <div class="mt-1">
+            <span class="username">John Doe</span>
+            <br>
+            <span class="member-date">Member since May 2018</span>
           </div>
         </div>
-        <div class="col-7 mx-auto my-auto">
+        <div class="col-md-9">
           <div class="text-box">
             <div class="text">
               Make your work consistent but not fucking
@@ -63,13 +60,23 @@ export default {
 
 <style lang="scss" scoped>
 #posts {
-  height: 100%;
+    height: 100%;
 
+    .posts-box {
+        height: 100%;
+        font-size: 14px;
 
-  .posts-box {
-    height: 200px;
-    font-size: 14px;
-  }
+        .member-date {
+          color: #707070;
+          font-size: 12px;
+        }
+
+        .votings {
+          position: relative;
+          top: 20px;
+        }
+
+    }
 
 }
 </style>
