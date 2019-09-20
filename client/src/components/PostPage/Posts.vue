@@ -61,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$date-font: 12px;
+$date-color: #707070;
 #posts {
     height: 100%;
 
@@ -69,13 +71,13 @@ export default {
         font-size: 14px;
 
         .member-date {
-            color: #707070;
-            font-size: 12px;
+            color: $date-color;
+            font-size: $date-font;
         }
 
         .posted-date {
-            font-size: 12px;
-            color: #707070;
+            font-size: $date-font;
+            color: $date-color;
         }
 
         .votings {
