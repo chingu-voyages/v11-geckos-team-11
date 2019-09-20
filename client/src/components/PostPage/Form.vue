@@ -7,6 +7,7 @@
             name="post-text"
             rows="6"
             class="w-100"
+            placeholder="Create a post..."
           />
         </div>
         <div class="col text-left">
@@ -36,7 +37,9 @@ export default {
 <style lang="scss" scoped>
 .text-area {
     height: 300px;
-
+    textarea {
+        border: solid black 1px;
+    }
     button {
         width: 120px;
     }
