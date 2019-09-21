@@ -14,27 +14,24 @@
 </template>
 
 <script>
-import Form from './PostPage/Form.vue';
-import Posts from './PostPage/Posts.vue';
+import Form from "./PostPage/Form.vue";
+import Posts from "./PostPage/Posts.vue";
 export default {
-  name: 'PostPage',
+  name: "PostPage",
   components: {
     Form,
     Posts
   },
   data() {
-    return {
-
-    }
+    return {};
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .post-page {
-    background-color: #ffffff;
-    height: 100%;
-    padding: 0 20%;
-
+  background-color: #ffffff;
+  height: 100%;
+  padding: 0 20%;
 }
 </style>
