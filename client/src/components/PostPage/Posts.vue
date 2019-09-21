@@ -38,7 +38,7 @@
               type="button"
               class="btn btn-outline-primary ml-3"
             >
-              {{ $store.state.buttonText }}
+              {{ $store.getters.buttonText }}
             </button>
           </div>
         </div>
@@ -48,20 +48,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: 'Posts',
-  props: {
-    btnText: {
-      type: String,
-      default: 'Start Discussion'
-    }
-  },
   data() {
     return {
 
     }
-  },
+  }
 }
 </script>
 

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: 'Form',
   data() {
@@ -36,8 +36,11 @@ export default {
   },
   watch: {
     textarea: function() {
+      // CHANGES BUTTON TEXT INSIDE Posts.vue
       if (this.textarea !== '') {
-        this.$store.commit('change');
+        this.$store.commit('changeButtonText', 'Join Discussion');
+      } else {
+        this.$store.commit('changeButtonText', 'Start Discussion');
       }
     }
   }

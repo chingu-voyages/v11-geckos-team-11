@@ -3,19 +3,17 @@ const state = {
 }
 
 const mutations = {
-  change(state, buttonText) {
-    state.buttonText = 'buttonText';
+  changeButtonText(state, buttonText) {
+    state.buttonText = buttonText;
   }
 }
 
 const getters = {
-  buttonText: state => state.buttonText
+  buttonText: (state) => state.buttonText
 }
-
 
 export default {
   state,
   getters,
-  actions,
   mutations
 }

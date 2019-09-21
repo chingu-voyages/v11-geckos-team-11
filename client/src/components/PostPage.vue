@@ -9,9 +9,7 @@
       </div>
     </div>
     <Form />
-    <Posts
-      :btn-text="btnText"
-    />
+    <Posts />
   </div>
 </template>
 
@@ -26,7 +24,7 @@ export default {
   },
   data() {
     return {
-      btnText: 'Start Discussion'
+
     }
   }
 }
