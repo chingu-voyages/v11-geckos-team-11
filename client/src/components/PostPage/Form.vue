@@ -31,16 +31,15 @@ export default {
   data() {
     return {
       textarea: ''
-
     }
   },
   watch: {
     textarea: function() {
       // CHANGES BUTTON TEXT INSIDE Posts.vue
       if (this.textarea !== '') {
-        this.$store.commit('changeButtonText', 'Join Discussion');
-      } else {
         this.$store.commit('changeButtonText', 'Start Discussion');
+      } else {
+        this.$store.commit('changeButtonText', 'Join Discussion');
       }
     }
   }

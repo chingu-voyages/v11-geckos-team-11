@@ -1,5 +1,5 @@
 const state = {
-  buttonText: 'Start Discussion'
+  buttonText: 'Join Discussion'
 }
 
 const mutations = {
