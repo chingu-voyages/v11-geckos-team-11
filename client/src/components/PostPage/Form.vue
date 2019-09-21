@@ -25,21 +25,22 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: 'TextareaForm',
+  name: 'Form',
   data() {
     return {
       textarea: ''
 
     }
+  },
+  watch: {
+    textarea: function() {
+      if (this.textarea !== '') {
+        this.$store.commit('change');
+      }
+    }
   }
-  // watch: {
-  //   textarea: function() {
-  //     if (this.textarea !== '') {
-  //       this.$emit('textarea-not-clear', 'Join Discussion');
-  //     }
-  //   }
-  // }
 }
 </script>
 

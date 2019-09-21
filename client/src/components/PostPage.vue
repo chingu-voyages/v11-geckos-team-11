@@ -8,7 +8,7 @@
         Ask questions, share content, introduce yourself. Be nice!
       </div>
     </div>
-    <TextareaForm />
+    <Form />
     <Posts
       :btn-text="btnText"
     />
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import TextareaForm from './PostPage/TextareaForm.vue';
+import Form from './PostPage/Form.vue';
 import Posts from './PostPage/Posts.vue';
 export default {
   name: 'PostPage',
   components: {
-    TextareaForm,
+    Form,
     Posts
   },
   data() {

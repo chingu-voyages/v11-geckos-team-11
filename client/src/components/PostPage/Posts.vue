@@ -38,7 +38,7 @@
               type="button"
               class="btn btn-outline-primary ml-3"
             >
-              {{ btnText }}
+              {{ $store.state.buttonText }}
             </button>
           </div>
         </div>
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: 'Posts',
   props: {
