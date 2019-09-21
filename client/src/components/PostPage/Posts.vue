@@ -1,7 +1,6 @@
 <template>
   <div
-    id="posts"
-    class="mx-auto w-100"
+    class="posts mx-auto w-100"
   >
     <div class="posts-box border border-dark">
       <div class="row px-3 py-4">
@@ -39,8 +38,7 @@
               type="button"
               class="btn btn-outline-primary ml-3"
             >
-              Start
-              Discussion
+              {{ btnText }}
             </button>
           </div>
         </div>
@@ -52,6 +50,12 @@
 <script>
 export default {
   name: 'Posts',
+  props: {
+    btnText: {
+      type: String,
+      default: 'Start Discussion'
+    }
+  },
   data() {
     return {
 
@@ -63,7 +67,7 @@ export default {
 <style lang="scss" scoped>
 $date-font: 12px;
 $date-color: #707070;
-#posts {
+.posts {
     height: 100%;
 
     .posts-box {

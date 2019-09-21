@@ -1,5 +1,5 @@
 <template>
-  <div id="post-page">
+  <div class="post-page">
     <div class="header-text pt-5 text-center">
       <div class="h2 font-weight-bold">
         Welcome to the DevTribe Community
@@ -8,31 +8,32 @@
         Ask questions, share content, introduce yourself. Be nice!
       </div>
     </div>
-
-    <Form />
-    <Posts />
+    <TextareaForm />
+    <Posts
+      :btn-text="btnText"
+    />
   </div>
 </template>
 
 <script>
-import Form from './PostPage/Form.vue';
+import TextareaForm from './PostPage/TextareaForm.vue';
 import Posts from './PostPage/Posts.vue';
 export default {
   name: 'PostPage',
   components: {
-    Form,
+    TextareaForm,
     Posts
   },
   data() {
     return {
-
+      btnText: 'Start Discussion'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-#post-page {
+.post-page {
     background-color: #ffffff;
     height: 100%;
     padding: 0 20%;

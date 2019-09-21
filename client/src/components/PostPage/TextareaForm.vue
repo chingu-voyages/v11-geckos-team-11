@@ -1,9 +1,10 @@
 <template>
-  <div id="form">
+  <div class="form">
     <form class="text-area text-center mt-5 mx-auto w-100">
       <div class="row">
         <div class="col-12">
           <textarea
+            v-model="textarea"
             name="post-text"
             rows="6"
             class="w-100"
@@ -25,12 +26,20 @@
 
 <script>
 export default {
-  name: 'Form',
+  name: 'TextareaForm',
   data() {
     return {
+      textarea: ''
 
     }
-  },
+  }
+  // watch: {
+  //   textarea: function() {
+  //     if (this.textarea !== '') {
+  //       this.$emit('textarea-not-clear', 'Join Discussion');
+  //     }
+  //   }
+  // }
 }
 </script>
 
