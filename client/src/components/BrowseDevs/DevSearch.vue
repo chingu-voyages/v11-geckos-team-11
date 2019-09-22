@@ -12,6 +12,7 @@
         id="button-addon2"
         class="btn btn-outline-primary"
         type="button"
+        @click="onSearch(search)"
       >
         Search
       </button>
@@ -29,7 +30,7 @@ export default {
    },
    methods: {
      onSearch(data) {
-      // catch input 
+      // init and catch input 
       console.log(data);
       
      },

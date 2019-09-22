@@ -3,7 +3,7 @@
     <div class="row px-3 py-4">
       <div class="col-md-3 user mx-auto my-auto text-center">
         <img
-          src="https://via.placeholder.com/200x150"
+          src="https://via.placeholder.com/250x200"
           class="img-fluid text-center"
           alt="user profile image"
         >
