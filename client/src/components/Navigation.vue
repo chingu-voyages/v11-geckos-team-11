@@ -23,19 +23,24 @@
         <a
           class="nav-item nav-link mx-3"
           href="#"
-        ><router-link to="/browse">Browse Devs</router-link></a>
-
+        >
+          <router-link to="/browse">Browse Devs</router-link>
+        </a>
         <a
           v-if="!isLoggedIn"
           class="nav-item nav-link mx-3"
           href="/login"
-        ><router-link to="/login">Login</router-link></a>
+        >
+          <router-link to="/login">Login</router-link>
+        </a>
         <a
           v-if="!isLoggedIn"
           href="/register"
           class="btn btn-outline-success mx-3 px-4"
           role="button"
-        ><router-link to="/register">Join</router-link></a>
+        >
+          <router-link to="/register">Join</router-link>
+        </a>
         <a
           v-if="isLoggedIn"
           href="/posts"
@@ -49,14 +54,17 @@
           href="/profile"
           class="nav-item nav-link mx-3"
           role="button"
-        ><router-link to="/profile">Profile</router-link></a>
+        >
+          <router-link to="/profile">Profile</router-link>
+        </a>
         <a
           v-if="isLoggedIn"
           href="#"
           class="btn btn-danger mx-3 px-4"
           role="button"
           @click.prevent="logoutUser"
-        >Logout</a>
+        >Logout
+        </a>
       </div>
     </div>
   </nav>
@@ -84,7 +92,7 @@ export default {
     a {
         font-size: 20px;
         text-decoration: none;
-        color: #ffffff
+        color: #ffffff;
     }
     .navbar-brand {
         font-size: 20px;

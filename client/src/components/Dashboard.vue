@@ -110,7 +110,10 @@
                   <div class="container">
                     <div class="experience">
                       <h4>Education Credentials</h4>
-                      <table v-if="profile.education.length > 0" class="table">
+                      <table
+                        v-if="profile.education.length > 0"
+                        class="table"
+                      >
                         <thead>
                           <tr>
                             <th>School</th>
@@ -121,7 +124,10 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr v-for="(education) in profile.education" :key="education._id">
+                          <tr
+                            v-for="(education) in profile.education"
+                            :key="education._id"
+                          >
                             <td>{{ education.school }}</td>
                             <td>{{ education.fieldofstudy }}</td>
                             <td>{{ education.degree }}</td>
@@ -133,7 +139,9 @@
                               <button
                                 class="btn btn-danger"
                                 @click.prevent="deleteEducation(education._id)"
-                              >Delete</button>
+                              >
+                                Delete
+                              </button>
                             </td>
                           </tr>
                         </tbody>
