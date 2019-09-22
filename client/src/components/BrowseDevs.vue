@@ -5,6 +5,7 @@
         Browse & Connect With Developers
       </div>
     </div>
+    <DevSearch />
     <DevCard />
     <DevCard />
     <DevCard />
@@ -12,10 +13,12 @@
 </template>
 
 <script>
-import DevCard from "./BrowseDevs/DevCard.vue";
+import DevCard from './BrowseDevs/DevCard.vue';
+import DevSearch from './BrowseDevs/DevSearch.vue';
 export default {
-  name: "BrowseDevs",
+  name: 'BrowseDevs',
   components: {
+    DevSearch,
     DevCard
   },
   data() {
@@ -28,6 +31,5 @@ export default {
 .browse-devs {
   height: 100%;
   background-color: #ffffff;
-
 }
 </style>
