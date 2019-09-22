@@ -24,7 +24,7 @@
           class="nav-item nav-link mx-3"
           href="#"
         >
-          <router-link to="/browse">Browse Devs</router-link>
+          <router-link to="/browse-devs">Browse Devs</router-link>
         </a>
         <a
           v-if="!isLoggedIn"

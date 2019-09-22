@@ -1,67 +1,74 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import store from './store'
-import MainPage from './components/MainPage.vue';
-import RegisterPage from './components/RegisterPage.vue';
-import LoginPage from './components/LoginPage.vue';
-import ProfilePage from './components/ProfilePage.vue';
-import Dashboard from './components/Dashboard.vue';
-import ResetPage from './components/ResetPage.vue';
-import PostPage from './components/PostPage.vue';
+import Vue from "vue";
+import Router from "vue-router";
+import store from "./store";
+import MainPage from "./components/MainPage.vue";
+import RegisterPage from "./components/RegisterPage.vue";
+import LoginPage from "./components/LoginPage.vue";
+import ProfilePage from "./components/ProfilePage.vue";
+import Dashboard from "./components/Dashboard.vue";
+import ResetPage from "./components/ResetPage.vue";
+import PostPage from "./components/PostPage.vue";
+import BrowseDevs from "./components/BrowseDevs.vue";
 
 Vue.use(Router);
 
 const ifNotLoggedIn = (to, from, next) => {
   if (!store.getters.isLoggedIn) {
-    next()
-    return
+    next();
+    return;
   }
-  next('/')
-}
+  next("/");
+};
 
 const ifLoggedIn = (to, from, next) => {
   if (store.getters.isLoggedIn) {
-    next()
-    return
+    next();
+    return;
   }
-  next('/login')
-}
+  next("/login");
+};
 
 const router = new Router({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      path: '/',
+      path: "/",
       component: MainPage
     },
     {
-      path: '/register',
+      path: "/register",
       component: RegisterPage,
       beforeEnter: ifNotLoggedIn
     },
     {
-      path: '/login',
+      path: "/login",
       component: LoginPage,
-      name: 'login',
+      name: "login",
       beforeEnter: ifNotLoggedIn
     },
     {
-      path: '/profile',
+      path: "/profile",
       component: ProfilePage,
-      name: 'profile',
+      name: "profile",
       beforeEnter: ifLoggedIn
     },
     {
-      path: '/reset',
+      path: "/reset",
       component: ResetPage
     },
     {
-      path: '/posts',
+      path: "/posts",
       component: PostPage,
       beforeEnter: ifLoggedIn
     },
+    {
+      path: "/browse-devs",
+      component: BrowseDevs,
+      beforeEnter: ifLoggedIn
+    }
+
   ]
-})
+});
 
 // router.beforeEach((to, from, next) => {
 //   // false by default on the store.
