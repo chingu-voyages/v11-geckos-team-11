@@ -44,25 +44,23 @@
 
 <script>
 export default {
-  name: "DevCards",
+  name: 'DevCards',
   data() {
-      return {
-
-      }
+    return {};
   }
 };
 </script>
 
 <style lang="scss" scoped>
-  .dev-card {
-    .user-skills {
-      list-style-type: none;
-      li {
-        margin: 10% 0;
-        i {
-          font-size: 25px;
-        }
+.dev-card {
+  .user-skills {
+    list-style-type: none;
+    li {
+      margin: 10% 0;
+      i {
+        font-size: 25px;
       }
     }
   }
+}
 </style>
