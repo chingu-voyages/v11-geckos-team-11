@@ -1,18 +1,18 @@
 <template>
   <div class="input-group mb-3 w-50 mt-5 mx-auto">
     <input
-      v-model="search"
+      v-model="searchInput"
       type="text"
       class="form-control"
       placeholder="Search for Devs..."
-      @input="onSearch(search)"
+      @input="onSearch(searchInput)"
     >
     <div class="input-group-append">
       <button
         id="button-addon2"
         class="btn btn-outline-primary"
         type="button"
-        @click="onSearch(search)"
+        @click="onSearch(searchInput)"
       >
         Search
       </button>
@@ -25,13 +25,13 @@ export default {
   name: 'DevSearch',
   data() {
     return {
-      search: '',
+      searchInput: '',
     }
    },
    methods: {
-     onSearch(data) {
+     onSearch(inputValue) {
       // init and catch input 
-      console.log(data);
+      console.log(inputValue);
       
      },
      filterSearchResult() {
