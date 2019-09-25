@@ -5,7 +5,7 @@ import MainPage from "./components/MainPage.vue";
 import RegisterPage from "./components/RegisterPage.vue";
 import LoginPage from "./components/LoginPage.vue";
 import ProfilePage from "./components/ProfilePage.vue";
-import Dashboard from "./components/Dashboard.vue";
+import ProfileEdit from "./components/ProfileEdit.vue";
 import ResetPage from "./components/ResetPage.vue";
 import PostPage from "./components/PostPage.vue";
 import BrowseDevs from "./components/BrowseDevs.vue";

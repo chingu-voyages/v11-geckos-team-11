@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation />
-    <div class="dashboard">
+    <div class="profile-edit">
       <template v-if="profile === 'null' || loading">
         <Spinner />
       </template>
@@ -29,7 +29,7 @@
             <div class="row">
               <div class="col-md-12 text-center mx-auto mt-4">
                 <div class="mb-1">
-                  <h1>Dashboard</h1>
+                  <h1>Profile Edit</h1>
                   <h3>Welcome back, {{ user.email }}</h3>
                 </div>
                 <div
@@ -191,7 +191,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
+.profile-edit {
   background-color: white;
 
   .lead {
