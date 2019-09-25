@@ -65,6 +65,11 @@ const router = new Router({
       path: "/browse-devs",
       component: BrowseDevs,
       beforeEnter: ifLoggedIn
+    },
+    {
+      path: "/dashboard",
+      component: Dashboard,
+      // beforeEnter: ifLoggedIn
     }
 
   ]
