@@ -67,8 +67,8 @@ const router = new Router({
       beforeEnter: ifLoggedIn
     },
     {
-      path: "/dashboard",
-      component: Dashboard,
+      path: "/profile-edit",
+      component: ProfileEdit,
       // beforeEnter: ifLoggedIn
     }
 
