@@ -43,7 +43,6 @@
         <label for="exampleFormControlInput1">Company:</label>
         <input
           id="exampleFormControlInput1"
-          type="email"
           class="form-control"
           placeholder="DevTribe"
         >
@@ -53,7 +52,6 @@
         <label for="exampleFormControlInput1">Webiste or Portfolio:</label>
         <input
           id="exampleFormControlInput1"
-          type="email"
           class="form-control"
           placeholder="john-doe.com"
         >
@@ -63,7 +61,6 @@
         <label for="exampleFormControlInput1">Location:</label>
         <input
           id="exampleFormControlInput1"
-          type="email"
           class="form-control"
         >
       </div>
@@ -72,7 +69,6 @@
         <label for="exampleFormControlInput1">Skillset:</label>
         <input
           id="exampleFormControlInput1"
-          type="email"
           class="form-control"
           placeholder="E.g. Javascript, CSS, HTML (Seperate by comma)"
         >
@@ -82,7 +78,6 @@
         <label for="exampleFormControlInput1">GitHub Username:</label>
         <input
           id="exampleFormControlInput1"
-          type="email"
           class="form-control"
         >
       </div>
