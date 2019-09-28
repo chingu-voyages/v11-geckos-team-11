@@ -163,7 +163,7 @@ export default {
     i {
       left: -40px;
       position: relative;
-      margin-right: -32px;
+      margin: 4px -32px 0 0;
     }
   }
 }
