@@ -3,7 +3,7 @@
     <div class="h2 text-center pt-5 mb-5">
       Hi {{ userName }}, Edit your DevTribe Profile
     </div>
-    <form class="w-50 mx-auto">
+    <form class="w-75 mx-auto">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span
@@ -29,6 +29,7 @@
         <label for="exampleFormControlSelect1">Professional Status:</label>
         <select
           id="exampleFormControlSelect1"
+          v-model="userProfileData.professionalStatus"
           class="form-control"
         >
           <option>profession 1</option>
@@ -43,6 +44,7 @@
         <label for="exampleFormControlInput1">Company:</label>
         <input
           id="exampleFormControlInput1"
+          v-model="userProfileData.company"
           class="form-control"
           placeholder="DevTribe"
         >
@@ -52,6 +54,7 @@
         <label for="exampleFormControlInput1">Webiste or Portfolio:</label>
         <input
           id="exampleFormControlInput1"
+          v-model="userProfileData.portfolio"
           class="form-control"
           placeholder="john-doe.com"
         >
@@ -61,6 +64,7 @@
         <label for="exampleFormControlInput1">Location:</label>
         <input
           id="exampleFormControlInput1"
+          v-model="userProfileData.location"
           class="form-control"
         >
       </div>
@@ -69,6 +73,7 @@
         <label for="exampleFormControlInput1">Skillset:</label>
         <input
           id="exampleFormControlInput1"
+          v-model="userProfileData.skillSet"
           class="form-control"
           placeholder="E.g. Javascript, CSS, HTML (Seperate by comma)"
         >
@@ -78,6 +83,7 @@
         <label for="exampleFormControlInput1">GitHub Username:</label>
         <input
           id="exampleFormControlInput1"
+          v-model="userProfileData.githubUsername"
           class="form-control"
         >
       </div>
@@ -86,6 +92,7 @@
         <label for="exampleFormControlTextarea1">About You:</label>
         <textarea
           id="exampleFormControlTextarea1"
+          v-model="userProfileData.aboutYou"
           class="form-control"
           rows="3"
         />
@@ -131,7 +138,10 @@
           >
         </div>
       </div>
-      <button class="btn btn-success mt-2">
+      <button
+        class="btn btn-success mt-2"
+        @click="saveProfileData"
+      >
         Save Changes
       </button>
     </form>
@@ -139,12 +149,36 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'ProfileEdit',
+  props: {
+    userName: {
+      type: String,
+      default: 'John Doe'
+    }
+  },
   data() {
     return {
-      userName: 'John Doe'
+      userProfileData: {
+        professionalStatus: '',
+        company: '',
+        portfolio: '',
+        location: '',
+        skillSet: '',
+        githubUsername: '',
+        aboutYou: ''
+      }
     };
+  },
+  methods: {
+    saveProfileData() {
+      event.preventDefault();
+      console.log(this.userProfileData);
+    },
+    fetchProfileData() {
+      // get data from API-route
+    }
   }
 };
 </script>
