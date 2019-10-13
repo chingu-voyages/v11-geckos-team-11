@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navigation />
     <template v-if="profile === 'null' || loading">
       <Spinner />
     </template>
@@ -37,7 +36,6 @@
 
 <script>
 import Spinner from "./common/Spinner";
-import Navigation from "./Navigation.vue";
 import Hero from "./ProfilePage/Hero.vue";
 import UserName from "./ProfilePage/UserName.vue";
 import SkillsBio from "./ProfilePage/SkillsBio.vue";
@@ -48,7 +46,6 @@ import { mapState } from "vuex";
 export default {
   components: {
     Spinner,
-    Navigation,
     Hero,
     UserName,
     SkillsBio,

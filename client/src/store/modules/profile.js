@@ -6,7 +6,6 @@ const state = {
   profiles: null,
   repos: null,
   loading: false
-
 }
 
 const getters = {
