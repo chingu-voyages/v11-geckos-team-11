@@ -26,23 +26,20 @@
         >
           <router-link to="/browse-devs">Browse Devs</router-link>
         </a>
-        <a
-          v-if="!isLoggedIn"
+        <!-- <a
           class="nav-item nav-link mx-3"
           href="/login"
         >
           <router-link to="/login">Login</router-link>
-        </a>
-        <a
-          v-if="!isLoggedIn"
+        </a> -->
+        <!-- <a
           href="/register"
           class="btn btn-outline-success mx-3 px-4"
           role="button"
         >
           <router-link to="/register">Join</router-link>
-        </a>
+        </a> -->
         <a
-          v-if="isLoggedIn"
           href="/posts"
           class="nav-item nav-link mx-3"
           role="button"
@@ -50,7 +47,6 @@
           <router-link to="/posts">Posts</router-link>
         </a>
         <a
-          v-if="isLoggedIn"
           href="/profile"
           class="nav-item nav-link mx-3"
           role="button"
@@ -58,7 +54,6 @@
           <router-link to="/profile">Profile</router-link>
         </a>
         <a
-          v-if="isLoggedIn"
           href="#"
           class="btn btn-danger mx-3 px-4"
           role="button"
@@ -75,9 +70,6 @@ import {
   mapGetters
 } from "vuex";
 export default {
-  computed: {
-    ...mapGetters(["isLoggedIn"])
-  },
   methods: {
     logoutUser() {
       this.$store.dispatch("logout");

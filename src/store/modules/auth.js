@@ -1,101 +1,101 @@
-import axios from 'axios';
-import router from '../../router';
-import toast from '../../helpers/toast';
+// import axios from 'axios';
+// import router from '../../router';
+// import toast from '../../helpers/toast';
 
-const state = {
-  token: localStorage.getItem('jwt') || '',
-  user: {},
-  errors: {},
-  isLoading: false
-}
+// const state = {
+//   token: localStorage.getItem('jwt') || '',
+//   user: {},
+//   errors: {},
+//   isLoading: false
+// }
 
-const getters = {
-  isLoggedIn: state => !!state.token, // returns true or false
-  user: state => state.user
-}
+// const getters = {
+//   isLoggedIn: state => !!state.token, // returns true or false
+//   user: state => state.user
+// }
 
-const actions = {
-  // Login action
-  async login( { commit }, user) {
-    commit('auth_request');
+// const actions = {
+//   // Login action
+//   async login( { commit }, user) {
+//     commit('auth_request');
 
-    try {
-      const res = await axios.post('http://localhost:3000/api/v1/users/login', user);
-      if (res.data.status === 'success') {
-        const token = res.data.token;
-        const user = res.data.user;
-        localStorage.setItem('jwt', token);
-        // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        commit('auth_success', { token, user }  );
-        toast.success(res.data.message);
-        router.push('/' )
-      }
-      return res;
-    } catch (error) {
-      commit('set_errors', error.response.data)
-      toast.error(error.response.data.message);
-    }
-  },
+//     try {
+//       const res = await axios.post('http://localhost:3000/api/v1/users/login', user);
+//       if (res.data.status === 'success') {
+//         const token = res.data.token;
+//         const user = res.data.user;
+//         localStorage.setItem('jwt', token);
+//         // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+//         commit('auth_success', { token, user }  );
+//         toast.success(res.data.message);
+//         router.push('/' )
+//       }
+//       return res;
+//     } catch (error) {
+//       commit('set_errors', error.response.data)
+//       toast.error(error.response.data.message);
+//     }
+//   },
 
-  // Register action
-  async register({ commit }, newUser) {
-    commit('auth_request')
-    try {
-      let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser);
+//   // Register action
+//   async register({ commit }, newUser) {
+//     commit('auth_request')
+//     try {
+//       let res = await axios.post('http://localhost:3000/api/v1/users/signup', newUser);
 
-      if (res.data.status === 'success') {
-        const newUser = res.data.user;
-        const token = res.data.token;
-        localStorage.setItem('jwt', token)
-        // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        commit('auth_success', { token, newUser }  );
-        router.push('/profile')
-        toast.success(res.data.message)
-      }
-      return res;
-    } catch (error) {
-      commit('set_errors', error.response.data)
-      toast.error(error.response.data.message);
-    }
-  },
+//       if (res.data.status === 'success') {
+//         const newUser = res.data.user;
+//         const token = res.data.token;
+//         localStorage.setItem('jwt', token)
+//         // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+//         commit('auth_success', { token, newUser }  );
+//         router.push('/profile')
+//         toast.success(res.data.message)
+//       }
+//       return res;
+//     } catch (error) {
+//       commit('set_errors', error.response.data)
+//       toast.error(error.response.data.message);
+//     }
+//   },
 
-  // Logout
-  async logout({
-    commit
-  }) {
-    let res = await axios.get('http://localhost:3000/api/v1/users/logout');
-    if (res.data.status === 'success') {
-      commit('logout')
-      await localStorage.removeItem('jwt')
-      delete axios.defaults.headers.common['Authorization'];
-      toast.success('Sucessfully logged out...')
-      router.push('/')
-      return
-    }
-  }
-}
+//   // Logout
+//   async logout({
+//     commit
+//   }) {
+//     let res = await axios.get('http://localhost:3000/api/v1/users/logout');
+//     if (res.data.status === 'success') {
+//       commit('logout')
+//       await localStorage.removeItem('jwt')
+//       delete axios.defaults.headers.common['Authorization'];
+//       toast.success('Sucessfully logged out...')
+//       router.push('/')
+//       return
+//     }
+//   }
+// }
 
-const mutations = {
-  auth_request(state) {
-    state.isLoading = true
-  },
-  auth_success(state, { token, user }) {
-    state.token = token
-    state.user = user
-  },
-  set_errors(state, errors) {
-    state.errors = errors;
-  },
-  logout(state) {
-    state.token = ''
-    state.user = {}
- },
+// const mutations = {
+//   auth_request(state) {
+//     state.isLoading = true
+//   },
+//   auth_success(state, { token, user }) {
+//     state.token = token
+//     state.user = user
+//   },
+//   set_errors(state, errors) {
+//     state.errors = errors;
+//   },
+//   logout(state) {
+//     state.token = ''
+//     state.user = {}
+//  },
 
-}
+// }
 
-export default {
-  state,
-  getters,
-  actions,
-  mutations
-}
+// export default {
+//   state,
+//   getters,
+//   actions,
+//   mutations
+// }

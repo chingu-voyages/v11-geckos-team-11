@@ -50,7 +50,6 @@ const router = new Router({
       path: "/profile",
       component: ProfilePage,
       name: "profile",
-      beforeEnter: ifLoggedIn
     },
     {
       path: "/reset",
@@ -59,17 +58,14 @@ const router = new Router({
     {
       path: "/posts",
       component: PostPage,
-      beforeEnter: ifLoggedIn
     },
     {
       path: "/browse-devs",
       component: BrowseDevs,
-      beforeEnter: ifLoggedIn
     },
     {
       path: "/profile-edit",
       component: ProfileEdit,
-      // beforeEnter: ifLoggedIn
     }
 
   ]
