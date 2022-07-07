@@ -14,7 +14,7 @@
     "core-js": "^2.6.5",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "popper.js": "^1.15.0",
     "vue": "^2.6.10",
     "vue-izitoast": "^1.2.1",
